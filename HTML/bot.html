@@ -5,58 +5,68 @@
     <meta charset="utf-8">
     <link rel="Shortcut Icon" type="image/x-icon"
     href="https://media-exp1.licdn.com/dms/image/C560BAQF4M0IT6_BcsA/company-logo_200_200/0/1620918122423?e=2159024400&v=beta&t=bS2Zs3ue9dfCics0Y1vaBxJJUKQJa_TudRCBf9zNfMY">
-    <title>操控思翰</title>
+    <title>操控discord</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image"
     content="https://media-exp1.licdn.com/dms/image/C560BAQF4M0IT6_BcsA/company-logo_200_200/0/1620918122423?e=2159024400&v=beta&t=bS2Zs3ue9dfCics0Y1vaBxJJUKQJa_TudRCBf9zNfMY">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="操控思翰">
+    <meta property="og:title" content="操控discord">
     <meta property="og:description" content="操控他">
     <meta property="og:url" content="https://jhih-yu-0414.tk/han.html">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://jhih-yu-0414.tk/css/css1.css"></link>
 <script>
     function clean() {
-        document.querySelector("#input1").value = "";
-        document.querySelector("#input2").value = "";
+      document.querySelector("#input1").value = "";
+      document.querySelector("#input2").value = "";
+      document.querySelector("#choose_people").value = "";
     }
     function go() {
       var name = document.querySelector("#input1").value;
       var message = document.querySelector("#input2").value;
+      var people = document.querySelector("#choose_people").value;
       console.log(name)
       console.log(message)
+      console.log(people)
       document.getElementById('button1').value = "傳送中...";
       document.getElementById('button1').disabled = true;
-      $.post('https://script.google.com/macros/s/AKfycbw14znAb1u0AHyJK3E0bp3xrux7oY4Pd5PPaDFualzDAKEWRgj1ePfMwe9qY7q29hy2/exec', {
+      $.post('https://script.google.com/macros/s/AKfycbzCkS-5nbwavOCTpIAAvzO8VpfCh1L_HQOqCD5vnLeX2AQ0HTUIzOkS30tKSLQVG265/exec', {
         name: name,
-        message: message
+        message: message,
+        people: people
       }, function (e) {
         console.log(e);
         document.getElementById('button1').value = "傳送";
         document.getElementById('button1').disabled = false;
-        swal("傳送成功\n", "","success",{
+        if(e=="send_success"){
+          swal("傳送成功\n", "","success",{
           timer:1500,
         });
+        }else{
+          swal("傳送失敗\n", e,"fail",{
+          timer:1500,
+          });
+        }
       });
     }
     </script>
 </head>
 
 <body style="height: 100%;">
-    <div class="box1">
-        <div class="box1-1">
-          <input type="text" value="思翰" placeholder="名稱" id="input1" ></input>
-            <p></p>
-            <textarea type="text" 
-            id="input2" placeholder="訊息" onfocus="this.placeholder=''" onblur="this.placeholder='訊息'" required style="height: 50%"></textarea>
-            <p></p>
-            <input class="button1" id="button1" type="submit" value="傳送" onclick="go()">
-            <br/><p/>
-            <input class="button2" value="清除" type="button" onclick="clean()">
-        </div>
-    </div>
-
+  <select id="choose_people">
+    <option value="">請選擇人物</option>
+    <option value="han">思翰</option>
+    <option value="radish">蘿蔔</option>
+    <option value="water">大軍</option>
+  </select>
+  <p></p>
+  <input type="text" value="" placeholder="名稱" id="input1" ></input>
+  <p></p>
+  <textarea type="text" id="input2" placeholder="訊息" onfocus="this.placeholder=''" onblur="this.placeholder='訊息'" required style="height: 50%"></textarea>
+  <p></p>
+  <input class="button1" id="button1" type="submit" value="傳送" onclick="go()">
+  <input class="button2" value="清除" type="button" onclick="clean()">
+  <p></p>
 </body>
 <footer class="footer">
     <a class="footer1" href="https://jhih-yu-0414.tk/隱私權條款.html">隱私權條款</a>
