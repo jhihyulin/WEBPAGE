@@ -17,23 +17,27 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     function clean() {
-      document.querySelector("#input1").value = "";
-      document.querySelector("#input2").value = "";
+      document.querySelector("#name").value = "";
+      document.querySelector("#message").value = "";
       document.querySelector("#choose_people").value = "";
+      document.querySelector("#avatar_url").value = "";
     }
     function go() {
-      var name = document.querySelector("#input1").value;
-      var message = document.querySelector("#input2").value;
+      var name = document.querySelector("#name").value;
+      var message = document.querySelector("#message").value;
       var people = document.querySelector("#choose_people").value;
-      console.log(name)
-      console.log(message)
-      console.log(people)
+      var avatar_url = document.querySelector("#avatar_url").value;
+      console.log(name);
+      console.log(message);
+      console.log(people);
+      console.log(avatar_url);
       document.getElementById('button1').value = "傳送中...";
       document.getElementById('button1').disabled = true;
-      $.post('https://script.google.com/macros/s/AKfycbzCkS-5nbwavOCTpIAAvzO8VpfCh1L_HQOqCD5vnLeX2AQ0HTUIzOkS30tKSLQVG265/exec', {
+      $.post('https://script.google.com/macros/s/AKfycbwriDCkXyjGssi7Y8t0PLydS27f6k-Io78bGYfnRPjYUeVEgYqV7sPhwooYHMJgz6po/exec', {
         name: name,
         message: message,
-        people: people
+        people: people,
+        avatar_url: avatar_url
       }, function (e) {
         console.log(e);
         document.getElementById('button1').value = "傳送";
@@ -58,11 +62,15 @@
     <option value="han">思翰</option>
     <option value="radish">蘿蔔</option>
     <option value="water">大軍</option>
+    <option value="custom">自訂</option>
+    <option value="test">測試</option>
   </select>
   <p></p>
-  <input type="text" value="" placeholder="名稱" id="input1" ></input>
+  <input type="text" value="" placeholder="頭像" id="avatar_url" ></input>
   <p></p>
-  <textarea type="text" id="input2" placeholder="訊息" onfocus="this.placeholder=''" onblur="this.placeholder='訊息'" required style="height: 50%"></textarea>
+  <input type="text" value="" placeholder="名稱" id="name" ></input>
+  <p></p>
+  <textarea type="text" id="message" placeholder="訊息" style="height: 30%"></textarea>
   <p></p>
   <input class="button1" id="button1" type="submit" value="傳送" onclick="go()">
   <input class="button2" value="清除" type="button" onclick="clean()">
