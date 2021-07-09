@@ -70,3 +70,13 @@
     outline: none;
     margin: 0 auto;
 }
+
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: #eeeeee;
+  border-left: 5px solid #00aae1;
+}
