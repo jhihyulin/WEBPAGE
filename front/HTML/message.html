@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="height: 100%;background-color: #dadada;">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="Shortcut Icon" type="image/x-icon"
+        href="https://scontent.ftpe7-3.fna.fbcdn.net/v/t1.0-9/68827742_724533071350384_4981811800187076608_o.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=K4XCvK4PFaAAX-ZMruj&_nc_ht=scontent.ftpe7-3.fna&oh=66ceefda5b23daf416336f1b16d03638&oe=60464D9A">
+    <title>jhih_yu_0414</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image"
+        content="https://scontent.ftpe7-3.fna.fbcdn.net/v/t1.0-9/68827742_724533071350384_4981811800187076608_o.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=K4XCvK4PFaAAX-ZMruj&_nc_ht=scontent.ftpe7-3.fna&oh=66ceefda5b23daf416336f1b16d03638&oe=60464D9A">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="jhih_yu_0414">
+    <meta property="og:description" content="🥱🥱">
+    <meta property="og:url" content="https://jhih-yu-0414.tk/message.html">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/css1.css">
+    </link>
+</head>
+
+<body style="height: 100%;">
+    <div class="box1">
+        <div class="box1-1">
+            <p></p>
+            <textarea type="text" class="input1" id="input1" placeholder="留言" onfocus="this.placeholder=''"
+                onblur="this.placeholder='留言'" required></textarea>
+            <p></p>
+            <input class="button1" id="button1" type="submit" value="傳送" onclick="go()">
+            <br />
+            <p></p>
+            <input class="button2" value="清除" type="button" onclick="clean()">
+        </div>
+    </div>
+    <script>
+        function clean() {
+            document.querySelector("#input1").value = "";
+        }
+        function go() {
+            var input1 = document.querySelector("#input1").value;
+            swal({
+                icon: "info",
+                title: "↓請確認輸入的內容↓",
+                text: input1,
+                buttons: {
+                    A: {
+                        text: "取消",
+                        value: "no"
+                    },
+                    B: {
+                        text: "傳送",
+                        value: "yes"
+                    }
+                }
+            }).then((value) => {
+                if (value == "yes") {
+                    swal("名字？", "不留就空白吧 我也不知道你是誰", "info", {
+                        content: "input",
+                    })
+                        .then((value) => {
+                            var username = value;
+                            console.log("input1:" + input1);
+                            console.log("username:" + username);
+                            document.getElementById('button1').value = "傳送中...";
+                            document.getElementById('button1').disabled = true;
+                            $.ajax({
+                                url: "https://ipapi.co/json/",
+                                type: "GET",
+                                crossDomain: true,
+                                success: function (response) {
+                                    console.log(response);
+                                    var ip = response.ip;
+                                    var ipv = response.version;
+                                    var continent = response.continent_code;
+                                    var country = response.country_mame;
+                                    var region = response.region;
+                                    var city = response.city;
+                                    var district = response.district;
+                                    var org = response.org;
+                                    var asn = response.asn;
+                                    var proxy = response.proxy;
+                                    var hosting = response.hosting;
+                                    console.log("success");
+                                    go1(input1, username, ip, ipv, continent, country, region, city, district, org, asn, proxy, hosting)
+                                },
+                                error: function (xhr, status) {
+                                    console.log(xhr + "\n" + status);
+                                    var ip = undefined;
+                                    console.log("IP:" + ip);
+                                    go1(input1, username, ip)
+                                }
+                            });
+                        })
+                };
+            });
+        }
+
+        function go1(input1, username, ip, ipv, continent, country, region, city, disert, org, asn, proxy, hosting) {
+            var system = navigator.userAgent;
+            var today = new Date();
+            var date = today.toLocaleDateString();
+            var time = today.toTimeString();
+            var timerr = today.toLocaleDateString() + "\n" + today.toTimeString();
+            console.log(system);
+            console.log(date);
+            console.log(time);
+            $.post('https://script.google.com/macros/s/AKfycbzbzeOgLvPz6eWbT5PBbV9EORKrRH0oEeBTYyL9mzGhcQnWVpF5XkWM/exec', {
+                date: date,
+                time: time,
+                input1: input1,
+                username: username,
+                ip: ip,
+                ipv: ipv,
+                continent: continent,
+                country: country,
+                region: region,
+                city: city,
+                disert: disert,
+                org: org,
+                asn: asn,
+                proxy: proxy,
+                hosting: hosting,
+                system: system
+            }, function (e) {
+                console.log(e);
+                document.getElementById('button1').value = "傳送";
+                document.getElementById('button1').disabled = false;
+                swal("傳送成功\n", timerr, "success", {
+                    timer: 1500,
+                });
+            });
+        }
+    </script>
+</body>
+
+<footer class="footer">
+    <a class="footer1" href="https://jhih-yu-0414.tk/隱私權條款.html">隱私權條款</a>
+    <p class="footer2">
+        jhih_yu_lin©2021
+    </p>
+</footer>
+
+</html>
