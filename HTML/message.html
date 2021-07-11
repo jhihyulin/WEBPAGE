@@ -104,31 +104,47 @@
             console.log(system);
             console.log(date);
             console.log(time);
-            $.post('https://script.google.com/macros/s/AKfycbzbzeOgLvPz6eWbT5PBbV9EORKrRH0oEeBTYyL9mzGhcQnWVpF5XkWM/exec', {
-                date: date,
-                time: time,
-                input1: input1,
-                username: username,
-                ip: ip,
-                ipv: ipv,
-                continent: continent,
-                country: country,
-                region: region,
-                city: city,
-                disert: disert,
-                org: org,
-                asn: asn,
-                proxy: proxy,
-                hosting: hosting,
-                system: system
+            $.post('https://script.google.com/macros/s/AKfycbwsBkPMi9CoIA0IagVLDIyE1QGWHEv5YuqtsxbRN22WWEXe-JjzbyFGdihmY6HoBf5-Dw/exec', {
+                webpage_name: "message"
             }, function (e) {
-                console.log(e);
-                document.getElementById('button1').value = "傳送";
-                document.getElementById('button1').disabled = false;
-                swal("傳送成功\n", timerr, "success", {
-                    timer: 1500,
-                });
-            });
+                if (e == "error") {
+                    console.log(e);
+                    document.getElementById('button1').value = "傳送";
+                    document.getElementById('button1').disabled = false;
+                    swal("傳送失敗\n請聯絡開發人員", timerr, "error", {
+                        timer: 2000,
+                    });
+                } else {
+                    let apps_script_url = e;
+                    console.log(apps_script_url);
+                    $.post(apps_script_url, {
+                        date: date,
+                        time: time,
+                        input1: input1,
+                        username: username,
+                        ip: ip,
+                        ipv: ipv,
+                        continent: continent,
+                        country: country,
+                        region: region,
+                        city: city,
+                        disert: disert,
+                        org: org,
+                        asn: asn,
+                        proxy: proxy,
+                        hosting: hosting,
+                        system: system
+                    }, function (e) {
+                        console.log(e);
+                        document.getElementById('button1').value = "傳送";
+                        document.getElementById('button1').disabled = false;
+                        swal("傳送成功\n", timerr, "success", {
+                            timer: 1500,
+                        });
+                    });
+                }
+            })
+
         }
     </script>
 </body>
