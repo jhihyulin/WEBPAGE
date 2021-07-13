@@ -1,5 +1,3 @@
-document.write('<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>');
-document.write('<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>');
 var firebaseConfig = {
     apiKey: "AIzaSyCD9r1BoMkQ7_lzschLnh-rYaMsA7LpEQs",
     authDomain: "webpage-349c7.firebaseapp.com",
@@ -10,5 +8,10 @@ var firebaseConfig = {
     appId: "1:897798864282:web:5508fd782851e7aaf10e23",
     measurementId: "G-57RJHE6TG1"
 };
-firebase.initializeApp(firebaseConfig);
-var perf = firebase.performance();
+
+try {
+    firebase.initializeApp(firebaseConfig);
+    var perf = firebase.performance();
+} catch (e) {
+    console.log(e);
+}
