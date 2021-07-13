@@ -1,3 +1,5 @@
+document.write('<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>');
+document.write('<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>');
 var firebaseConfig = {
     apiKey: "AIzaSyCD9r1BoMkQ7_lzschLnh-rYaMsA7LpEQs",
     authDomain: "webpage-349c7.firebaseapp.com",
