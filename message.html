@@ -39,6 +39,7 @@
         function clean() {
             document.querySelector("#input1").value = "";
         }
+
         function go() {
             var input1 = document.querySelector("#input1").value;
             swal({
@@ -57,97 +58,63 @@
                 }
             }).then((value) => {
                 if (value == "yes") {
-                    swal("名字？", "不留就空白吧 我也不知道你是誰", "info", {
-                        content: "input",
-                    })
-                        .then((value) => {
-                            var username = value;
-                            console.log("input1:" + input1);
-                            console.log("username:" + username);
-                            document.getElementById('button1').value = "傳送中...";
-                            document.getElementById('button1').disabled = true;
-                            $.ajax({
-                                url: "https://ipapi.co/json/",
-                                type: "GET",
-                                crossDomain: true,
-                                success: function (response) {
-                                    console.log(response);
-                                    var ip = response.ip;
-                                    var ipv = response.version;
-                                    var continent = response.continent_code;
-                                    var country = response.country_mame;
-                                    var region = response.region;
-                                    var city = response.city;
-                                    var district = response.district;
-                                    var org = response.org;
-                                    var asn = response.asn;
-                                    var proxy = response.proxy;
-                                    var hosting = response.hosting;
-                                    console.log("success");
-                                    go1(input1, username, ip, ipv, continent, country, region, city, district, org, asn, proxy, hosting)
-                                },
-                                error: function (xhr, status) {
-                                    console.log(xhr + "\n" + status);
-                                    var ip = undefined;
-                                    console.log("IP:" + ip);
-                                    go1(input1, username, ip)
-                                }
-                            });
-                        })
-                };
+                    console.log("input1:" + input1);
+                    var system = navigator.userAgent;
+                    var today = new Date();
+                    var date = today.toLocaleDateString();
+                    var time = today.toTimeString();
+                    console.log(system);
+                    console.log(date);
+                    console.log(time);
+                    document.getElementById('button1').value = "傳送中...";
+                    document.getElementById('button1').disabled = true;
+                    $.ajax({
+                        url: "https://script.google.com/macros/s/AKfycbwsBkPMi9CoIA0IagVLDIyE1QGWHEv5YuqtsxbRN22WWEXe-JjzbyFGdihmY6HoBf5-Dw/exec",
+                        type: "POST",
+                        cache: false,
+                        data: {
+                            webpage_name: 'message'
+                        },
+                        crossDomain: true,
+                        success: function (response) {
+                            var apps_script_url = response;
+                            send(apps_script_url, system, time, date, input1);
+                        },
+                        error: function (xhr, status) {
+                            console.log(xhr + "\n" + status);
+                            swal("傳送失敗\n" + xhr + "\n" + status, time, "error");
+                            document.getElementById('button1').value = "傳送";
+                            document.getElementById('button1').disabled = false;
+                        }
+                    });
+                }
             });
         }
 
-        function go1(input1, username, ip, ipv, continent, country, region, city, disert, org, asn, proxy, hosting) {
-            var system = navigator.userAgent;
-            var today = new Date();
-            var date = today.toLocaleDateString();
-            var time = today.toTimeString();
-            var timerr = today.toLocaleDateString() + "\n" + today.toTimeString();
-            console.log(system);
-            console.log(date);
-            console.log(time);
-            $.post('https://script.google.com/macros/s/AKfycbwsBkPMi9CoIA0IagVLDIyE1QGWHEv5YuqtsxbRN22WWEXe-JjzbyFGdihmY6HoBf5-Dw/exec', {
-                webpage_name: "message"
-            }, function (e) {
-                if (e == "error") {
-                    console.log(e);
+        function send(apps_script_url, system, time, date, input1) {
+            $.ajax({
+                url: apps_script_url,
+                type: "POST",
+                cache: false,
+                data: {
+                    system: system,
+                    time: time,
+                    input1: input1,
+                    date: date
+                },
+                crossDomain: true,
+                success: function (response) {
+                    swal("傳送成功\n", time, "success", { timer: 1500 });
                     document.getElementById('button1').value = "傳送";
                     document.getElementById('button1').disabled = false;
-                    swal("傳送失敗\n請聯絡開發人員", timerr, "error", {
-                        timer: 2000,
-                    });
-                } else {
-                    let apps_script_url = e;
-                    console.log(apps_script_url);
-                    $.post(apps_script_url, {
-                        date: date,
-                        time: time,
-                        input1: input1,
-                        username: username,
-                        ip: ip,
-                        ipv: ipv,
-                        continent: continent,
-                        country: country,
-                        region: region,
-                        city: city,
-                        disert: disert,
-                        org: org,
-                        asn: asn,
-                        proxy: proxy,
-                        hosting: hosting,
-                        system: system
-                    }, function (e) {
-                        console.log(e);
-                        document.getElementById('button1').value = "傳送";
-                        document.getElementById('button1').disabled = false;
-                        swal("傳送成功\n", timerr, "success", {
-                            timer: 1500,
-                        });
-                    });
+                },
+                error: function (xhr, status) {
+                    console.log(xhr + "\n" + status);
+                    swal("傳送失敗\n" + xhr + "\n" + status, time, "error");
+                    document.getElementById('button1').value = "傳送";
+                    document.getElementById('button1').disabled = false;
                 }
-            })
-
+            });
         }
     </script>
 </body>
