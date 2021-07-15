@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>login page</title>
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <h1>Login By Firebase Authentication</h1>
+  <div>
+    <input id="email" type="email" placeholder="email">
+    <input id="password" type="password" placeholder="password">
+    <input id="login" type="button" value="登入" onclick="login()">
+    <input id="register" type="button" value="註冊" onclick="register()">
+    <input id="logout" type="button" value="登出" onclick="logout()">
+  </div>
+  <div>
+    <input id="send_mail_verification" type="hidden" value="發送認證信" onclick="send_mail_verification()">
+  </div>
+  <div>
+    <input id="old-password" type="password" placeholder="舊密碼">
+    <input id="new-password" type="password" placeholder="新密碼">
+    <input id="change_password" type="button" value="確定" onclick="change_password()">
+  </div>
+  <div>
+    <input id="check-password" type="password" placeholder="密碼">
+    <input id="delete_account" type="button" value="確認刪除" onclick="delete_account()">
+  </div>
+  <div>
+    <input id="forgot" type="email" placeholder="email">
+    <input id="forgot_password" type="button" value="重設密碼" onclick="forgot_password()">
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/register.js"></script>
+  <script src="js/login_check.js"></script>
+  <script src="js/logout.js"></script>
+  <script src="js/reAuth.js"></script>
+  <script src="js/change_password.js"></script>
+  <script src="js/delete_account.js"></script>
+  <script src="js/send_email_verification.js"></script>
+  <script src="js/check_email_verification.js"></script>
+  <script src="js/forget_password.js"></script>
+</body>
+
+<footer>
+  <a href="privacy_policy.html">隱私權條款</a>
+  <a href="information_pecurity_policy.html">資訊安全政策</a>
+  <p>jhih_yu_lin©2021</p>
+</footer>
+
+</html>
