@@ -8,45 +8,19 @@
 </head>
 
 <body>
-    <div id="box1">
-        <h1>error</h1>
-        <h1>404</h1>
-        <p>
-            找不到網頁
-        </p>
-        <a href="index.html">點此返回首頁</a>
-        </p>
-        <div id="clock">
-            clock
+    <div class="c1">
+        <div class="c1">
+            <p>error</p>
+            <h1>404</h1>
+            <p>找不到網頁</p>
+            <a href="index.html">點此返回首頁</a>
+            <div id="clock">clock</div>
         </div>
-        <br />
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
     <script src="js/firebase.js"></script>
-    <script>
-        window.onload = startTime;
-        function startTime() {
-            var today = new Date();
-            var yyyy = today.getFullYear()
-            var mm = today.getMonth();
-            var dd = today.getDate();
-            var hh = today.getHours();
-            var mm = today.getMinutes();
-            var ss = today.getSeconds();
-            mm = checkTime(mm);
-            ss = checkTime(ss);
-            document.getElementById('clock').innerHTML = yyyy + "/" + mm + "/" + dd + " " + hh + ":" + mm + ":" + ss;
-            var timeoutId = setTimeout(startTime, 500);
-        }
-
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i;
-            }
-            return i;
-        }
-    </script>
+    <script src="js/404_clock.js"></script>
 </body>
 
 <footer class="footer">
