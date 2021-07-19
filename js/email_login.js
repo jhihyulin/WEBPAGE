@@ -1,4 +1,4 @@
-function login() {
+function email_login() {
     var email = document.querySelector("#email").value;
     var password = document.querySelector("#password").value;
     firebase.auth()

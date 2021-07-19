@@ -1,4 +1,4 @@
-function register() {
+function email_register() {
     var email = document.querySelector("#email").value;
     var password = document.querySelector("#password").value;
 
