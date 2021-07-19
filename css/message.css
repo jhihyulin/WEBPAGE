@@ -35,7 +35,7 @@ textarea {
     border-radius: 10px;
     border: 0;
     color: black;
-    background-color: #fff7f7;
+    background-color: #ffffff;
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
     outline: none;
     resize: none;
@@ -48,7 +48,7 @@ textarea {
     border-radius: 10px;
     color: black;
     border: 0;
-    background-color: #dadada;
+    background-color: #ffffff;
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
     outline: none;
     margin: 0 auto;
@@ -60,6 +60,7 @@ textarea {
     border-radius: 10px;
     color: black;
     border: 0;
+    background-color: #ffffff;
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
     outline: none;
     margin: 0 auto;
