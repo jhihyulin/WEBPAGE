@@ -32,7 +32,13 @@ firebase.auth().onAuthStateChanged(function (user) {
         var email = user.email;
         var uid = user.uid;
         console.log(email, uid);
-        document.getElementById("login_statue").innerHTML = "已登入";
+        if (user.emailVerified == true && user.email != null) {
+            document.getElementById("login_statue").innerHTML = "已登入";
+        } else if (user.emailVerified == false && user.email != null) {
+            document.getElementById("login_statue").innerHTML = "已登入 尚未驗證電子郵件";
+        } else if (user.email == null) {
+            document.getElementById("login_statue").innerHTML = "已匿名登入";
+        }
     } else {
         // 使用者未登入
         console.log("使用者尚未登入");
@@ -42,13 +48,15 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 firebase.auth().onAuthStateChanged(function (user) {
     try {
-        if (user.emailVerified == true) {
+        if (user.emailVerified == true && user.email != null) {
             console.log("電子郵件已驗證");
             document.getElementById("send_mail_verification").type = "hidden";
-        } else if (user.emailVerified == false) {
+        } else if (user.emailVerified == false && user.email != null) {
             swal("電子郵件未驗證", "請前往信箱點擊連結進行認證", "error");
             console.log("電子郵件未驗證");
             document.getElementById("send_mail_verification").type = "button";
+        } else if (user.email == null) {
+            console.log("匿名登入 不須驗證電子郵件");
         }
     } catch (error) {
         console.log(error);
@@ -83,12 +91,12 @@ function email_login() {
     firebase.auth()
         .signInWithEmailAndPassword(email, password)
         .then(result => {
-            swal("登入成功", "", "success");
+            swal("Email登入成功", "", "success");
             console.log("登入成功");
             console.log(result);
         })
         .catch(error => {
-            swal("登入錯誤", error.message, "error");
+            swal("Email登入錯誤", error.message, "error");
             console.log("登入錯誤");
             console.log(error.message);
         });
@@ -102,11 +110,11 @@ function email_register() {
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(result => {
-            swal("註冊成功", "", "success");
+            swal("Email註冊成功", "", "success");
             console.log("註冊成功");
             console.log(result);
         }).catch(function (error) {
-            swal("註冊錯誤", error.message, "error");
+            swal("Email註冊錯誤", error.message, "error");
             console.log("註冊錯誤");
             console.log(error.message);
         });
@@ -168,20 +176,56 @@ function send_mail_verification() {
 
 function google_login() {
     var provider = new firebase.auth.GoogleAuthProvider();
-
     firebase.auth()
-    .signInWithRedirect(provider)
+        .signInWithRedirect(provider)
         .then((result) => {
-            swal("登入成功","", "success");
+            swal("Google登入成功", "", "success");
             console.log(result);
             console.log("登入成功");
             var credential = result.credential;
             var token = credential.accessToken;
             var user = result.user;
-            console.log(user,token);
-            
+            console.log(user, token);
         }).catch((error) => {
-            swal("登入錯誤", error.message, "error");
+            swal("Google登入錯誤", error.message, "error");
+            console.log("登入錯誤");
+            console.log(error.message);
+            console.log(error);
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+        });
+}
+
+function anonymously_login() {
+    firebase.auth().signInAnonymously()
+        .then(() => {
+            swal("匿名登入成功", "", "success");
+        })
+        .catch((error) => {
+            swal("匿名登入失敗", "", "error");
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
+}
+
+function facebook_login() {
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+            swal("Facebook登入成功", "", "success");
+            console.log(result);
+            console.log("登入成功");
+            var credential = result.credential;
+            var user = result.user;
+            var accessToken = credential.accessToken;
+        })
+        .catch((error) => {
+            swal("Facebook登入錯誤", error.message, "error");
             console.log("登入錯誤");
             console.log(error.message);
             console.log(error);
