@@ -23,3 +23,8 @@ html{
 footer {
     text-align: center;
 }
+
+#build_with_firebase{
+    height:82px;
+    width:184px;
+}

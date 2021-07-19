@@ -67,3 +67,8 @@ textarea {
     outline: none;
     margin: 0 auto;
 }
+
+#build_with_firebase{
+    height:82px;
+    width:184px;
+}
