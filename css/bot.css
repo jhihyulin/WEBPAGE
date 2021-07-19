@@ -1,0 +1,13 @@
+footer {
+    text-align: center;
+}
+
+html{
+    text-align: center;
+    font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
+}
+
+#build_with_firebase{
+    height:82px;
+    width:184px;
+}
