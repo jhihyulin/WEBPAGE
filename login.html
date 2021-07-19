@@ -17,9 +17,8 @@
   <div>
     <input id="email" type="email" placeholder="email">
     <input id="password" type="password" placeholder="password">
-    <input id="login" type="button" value="登入" onclick="email_login()">
-    <input id="register" type="button" value="註冊" onclick="email_register()">
-    <input id="logout" type="button" value="登出" onclick="logout()">
+    <input id="email_login" type="button" value="登入" onclick="email_login()">
+    <input id="email_register" type="button" value="註冊" onclick="email_register()">
   </div>
   <div>
     <input id="send_mail_verification" type="hidden" value="發送認證信" onclick="send_mail_verification()">
@@ -37,6 +36,12 @@
     <input id="forgot" type="email" placeholder="email">
     <input id="forgot_password" type="button" value="重設密碼" onclick="forgot_password()">
   </div>
+  <div>
+    <input id="google_login" type="button" value="Google登入" onclick="google_login()">
+  </div>
+  <div>
+    <input id="logout" type="button" value="登出" onclick="logout()">
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
@@ -52,6 +57,7 @@
   <script src="js/send_email_verification.js"></script>
   <script src="js/check_email_verification.js"></script>
   <script src="js/forgot_password.js"></script>
+  <script src="js/google_login.js"></script>
 </body>
 
 <footer>
