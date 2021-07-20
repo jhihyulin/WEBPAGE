@@ -34,7 +34,7 @@
   </div>
   <div>
     <input id="check-password" type="password" placeholder="密碼">
-    <input id="delete_account" type="button" value="確認刪除" onclick="delete_account()">
+    <input id="delete_account" type="button" value="刪除帳號" onclick="delete_account()">
   </div>
   <div>
     <input id="forgot" type="email" placeholder="email">
@@ -42,25 +42,31 @@
   </div>
   <div>
     <input id="google_login" type="button" value="Google登入" onclick="google_login()">
-  </div>
-  <div>
     <input id="facebook_login" type="button" value="Facebook登入" onclick="facebook_login()">
-  </div>
-  <div>
     <input id="anonymously_login" type="button" value="匿名登入" onclick="anonymously_login()">
   </div>
   <div>
     <input id="logout" type="button" value="登出" onclick="logout()">
   </div>
+  <div>
+    <div id="firebaseui-auth-container"></div>
+  </div>
 
+  <!--firebase/firebaseui-web-->
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!--end-->
+  <!--firebase-->
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
   <script src="js/firebase.js"></script>
   <script src="js/login.js"></script>
+  <!--end-->
   <!--https://darkmodejs.learn.uno/-->
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   <script src="js/darkmode.js"></script>
+  <!--end-->
 </body>
 </p>
 <footer>
