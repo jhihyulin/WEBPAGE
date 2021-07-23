@@ -12,3 +12,8 @@ html{
     height:82px;
     width:184px;
 }
+
+#delete_account_check{
+    background-color: #ff0000;
+    color: #ffffff
+}

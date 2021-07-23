@@ -16,5 +16,9 @@ const options = {
     autoMatchOsTheme: true // default: true
 }
 
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
+try {
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+} catch (error) {
+    console.log(error);
+}

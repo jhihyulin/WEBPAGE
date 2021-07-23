@@ -5,55 +5,16 @@
   <meta charset="UTF-8">
   <title>login page</title>
   <link rel="stylesheet" type="text/css" href="css/login.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!--google font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap"
     rel="stylesheet">
-</head>
-
-<body>
-  <h1>Login By Firebase Authentication</h1>
-  <div>
-    <p id="login_statue">login_statue</p>
-  </div>
-  <div>
-    <input id="email" type="email" placeholder="email">
-    <input id="password" type="password" placeholder="password">
-    <input id="email_login" type="button" value="登入" onclick="email_login()">
-    <input id="email_register" type="button" value="註冊" onclick="email_register()">
-  </div>
-  <div>
-    <input id="send_mail_verification" type="hidden" value="發送認證信" onclick="send_mail_verification()">
-  </div>
-  <div>
-    <input id="old-password" type="password" placeholder="舊密碼">
-    <input id="new-password" type="password" placeholder="新密碼">
-    <input id="change_password" type="button" value="確定" onclick="change_password()">
-  </div>
-  <div>
-    <input id="check-password" type="password" placeholder="密碼">
-    <input id="delete_account" type="button" value="刪除帳號" onclick="delete_account()">
-  </div>
-  <div>
-    <input id="forgot" type="email" placeholder="email">
-    <input id="forgot_password" type="button" value="重設密碼" onclick="forgot_password()">
-  </div>
-  <div>
-    <input id="google_login" type="button" value="Google登入" onclick="google_login()">
-    <input id="facebook_login" type="button" value="Facebook登入" onclick="facebook_login()">
-    <input id="anonymously_login" type="button" value="匿名登入" onclick="anonymously_login()">
-  </div>
-  <div>
-    <input id="logout" type="button" value="登出" onclick="logout()">
-  </div>
-  <div>
-    <div id="firebaseui-auth-container"></div>
-  </div>
-
+  <!--end-->
   <!--firebase/firebaseui-web-->
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth__zh_tw.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <!--end-->
   <!--firebase-->
@@ -67,6 +28,35 @@
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   <script src="js/darkmode.js"></script>
   <!--end-->
+</head>
+
+<body>
+  <h1>Login By Firebase Authentication</h1>
+  <div>
+    <p id="login_statue">login_statue</p>
+  </div>
+  <div>
+    <input id="send_mail_verification" type="hidden" value="發送認證信" onclick="send_mail_verification()">
+  </div>
+  <div>
+    <input id="old-password" type="password" placeholder="舊密碼">
+    <input id="new-password" type="password" placeholder="新密碼">
+    <input id="change_password" type="button" value="確定" onclick="change_password()">
+  </div>
+  <div>
+    <input id="check-password" type="password" placeholder="密碼">
+    <input id="delete_account_check" type="button" value="刪除帳號" onclick="delete_account()">
+  </div>
+  <div>
+    <input id="forgot" type="email" placeholder="email">
+    <input id="forgot_password" type="button" value="忘記密碼" onclick="forgot_password()">
+  </div>
+  <div>
+    <input id="logout" type="button" value="登出" onclick="logout()">
+  </div>
+  <div>
+    <div id="firebaseui-auth-container"></div>
+  </div>
 </body>
 </p>
 <footer>
@@ -74,7 +64,7 @@
     <img id="build_with_firebase" src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg">
   </div>
   <a href="privacy_policy.html">隱私權條款</a>
-  <a href="information_pecurity_policy.html">資訊安全政策</a>
+  <a href="information_security_policy.html">資訊安全政策</a>
   <p>jhih_yu_lin©2021</p>
 </footer>
 
