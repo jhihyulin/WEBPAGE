@@ -27,13 +27,12 @@
     <div class="box1">
         <div class="box1-1">
             <p></p>
-            <textarea type="text" id="input1" placeholder="留言" onfocus="this.placeholder=''"
+            <textarea type="text" id="message" placeholder="留言" onfocus="this.placeholder=''"
                 onblur="this.placeholder='留言'" required></textarea>
             <p></p>
-            <input class="button1" id="button1" type="submit" value="傳送" onclick="go()">
-            <br />
+            <input class="button1" id="send" type="submit" value="傳送">
             <p></p>
-            <input class="button2" value="清除" type="button" onclick="clean()">
+            <input class="button2" id="clean" value="清除" type="button">
         </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
