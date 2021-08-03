@@ -6,61 +6,98 @@
     <link rel="Shortcut Icon" type="image/x-icon"
         href="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg">
     <title>COVID-19台灣疫情現況</title>
+    <!--og:-->
     <meta property="og:image"
         content="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg">
     <meta property="og:type" content="website">
     <meta property="og:title" content="COVID-19台灣疫情現況">
     <meta property="og:description" content="Status of Taiwan epidemic">
     <meta property="og:url" content="https://jhih-yu-0414.tk/COVID-19.html">
+    <!--og: end-->
+    <!--js-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--js end-->
+    <!--css-->
     <link rel="stylesheet" type="text/css" href="css/COVID-19.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--css end-->
     <!--google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap"
         rel="stylesheet">
-</head>
-
-<body>
-    <div class="c1">
-        <p>台灣疫情現況</p>
-    </div>
-    <div class="c2">
-        <div class="infogram-embed" data-id="0513a308-7f58-4bfa-94b6-66f6ebf55803" data-type="interactive"
-            data-title="病例校正回歸 新增確診數"></div>
-        <script>!function (e, i, n, s) { var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0]; if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) { var o = e.createElement("script"); o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d) } }(document, 0, "infogram-async");</script>
-        <div
-            style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px">
-            <a href="https://infogram.com/0513a308-7f58-4bfa-94b6-66f6ebf55803"
-                style="color:#989898!important;text-decoration:none!important;" target="_blank">病例校正回歸 新增確診數</a><br><a
-                href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;"
-                target="_blank" rel="nofollow">Infogram</a>
-        </div>
-    </div>
-    <div class="c3">
-        <div class="infogram-embed" data-id="1b5e8a8c-905e-4e8d-a4ba-33c8d47c2e7c" data-type="interactive"
-            data-title="死亡人數變化"></div>
-        <script>!function (e, i, n, s) { var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0]; if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) { var o = e.createElement("script"); o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d) } }(document, 0, "infogram-async");</script>
-        <div
-            style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px">
-            <a href="https://infogram.com/1b5e8a8c-905e-4e8d-a4ba-33c8d47c2e7c"
-                style="color:#989898!important;text-decoration:none!important;" target="_blank">死亡人數變化</a><br><a
-                href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;"
-                target="_blank" rel="nofollow">Infogram</a>
-        </div>
-    </div>
-    <div class="c4">
-        <iframe src="https://covid19.biobank.org.tw/narl/city_today.aspx"></iframe>
-    </div>
-
+    <!--google font end-->
+    <!--firebase-->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
     <script src="js/firebase.js"></script>
+    <!--firebase end-->
     <!--https://darkmodejs.learn.uno/-->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script src="js/darkmode.js"></script>
+    <!--darkmode end-->
+</head>
+
+<body>
+    <div id="" class="title">
+        <p>台灣疫情現況</p>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_21e6afd5-1359-4206-87ca-00a58b08950d" title="台灣疫情統計"
+            src="https://e.infogram.com/js/dist/embed.js?dy9" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_0513a308-7f58-4bfa-94b6-66f6ebf55803" title="病例校正回歸 新增確診數"
+            src="https://e.infogram.com/js/dist/embed.js?u2n" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_b7aa991d-30e6-452e-9269-8d6a8efb99cb" title="死亡個案統計"
+            src="https://e.infogram.com/js/dist/embed.js?AZh" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_1b5e8a8c-905e-4e8d-a4ba-33c8d47c2e7c" title="死亡人數變化"
+            src="https://e.infogram.com/js/dist/embed.js?0lD" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_e52a72a2-3b03-4a89-9843-f78af237eba8" title="縣市疫情數"
+            src="https://e.infogram.com/js/dist/embed.js?a1H" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_d1d57792-6bff-450c-87d2-baf215df41e3" title="各縣市累計本土案例"
+            src="https://e.infogram.com/js/dist/embed.js?49G" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_ce8a335e-de31-42fa-abfc-96659e7fea53" title="雙北本土病例"
+            src="https://e.infogram.com/js/dist/embed.js?Jp9" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_31809aa2-038e-48f4-8a38-1ce82d0b1e1a" title="14天平均確診數前10名國家"
+            src="https://e.infogram.com/js/dist/embed.js?Svw" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_bbecdbe1-ff02-4664-96c0-2742685e6209" title="疫苗施打總覽"
+            src="https://e.infogram.com/js/dist/embed.js?bfq" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_f25f5a66-bd5e-4272-b4b4-be1258a276a8" title="疫苗施打統計"
+            src="https://e.infogram.com/js/dist/embed.js?Mwg" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_49792900-1899-43e4-97c5-2dd2423182e6" title="COVID-19疫苗到貨狀況"
+            src="https://e.infogram.com/js/dist/embed.js?yfn" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_c6044bf3-c82d-4a04-bf3b-050bfe97dd87" title="台灣COVID-19疫苗統計"
+            src="https://e.infogram.com/js/dist/embed.js?J0d" type="text/javascript"></script>
+    </div>
+    <div id="" class="graph">
+        <script id="infogram_0_233e9801-5f83-44fa-8a9d-774ab20837e8" title="各縣市疫苗施打情形"
+            src="https://e.infogram.com/js/dist/embed.js?Cw5" type="text/javascript"></script>
+    </div>
+    <div id="" class="map">
+        <iframe id="city_today_map" src="https://covid19.biobank.org.tw/narl/city_today.aspx"></iframe>
+    </div>
 </body>
 </p>
 <footer>
