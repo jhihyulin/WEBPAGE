@@ -2,11 +2,144 @@ footer {
     text-align: center;
 }
 
-html{
-    font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
-}
-
 #build_with_firebase{
     height:82px;
     width:184px;
 }
+
+*{
+
+    box-sizing:0;
+    font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
+  
+  }
+  body,html{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+  
+  }
+  body{
+    padding:100px 0;
+    background-color:#D2D2D2;
+    border-top: solid 20px #00BFFF;
+    border-bottom: solid 20px #00BFFF;
+    box-sizing: border-box;
+  }
+  .container{
+    width:400px;
+    height:300px;
+    margin:100px auto;
+    position: relative;
+    overflow: hidden;
+    background-color:#042F40;
+    border-radius: 10px;
+    border: solid 1px rgaa(0,0,0,0.15);
+    box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition-duration:0.5s;
+  
+  }
+  
+  
+  .container:hover{
+    transform: translate(-5px,-5px);
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(-20deg,#12E2FE,#A6CAFD);
+  }
+  
+  
+  
+  span{
+    font-size:12px;
+  
+  }
+  
+  h2{
+    color:#F2F2F2;
+    margin:50px 20px 0 20px;
+  }
+  h2 span{
+    font-size:15px;
+  }
+  h5{
+    color:#40EAB6;
+    margin:20px 20px;
+  }
+  hr{
+    margin: 0 20px;
+  }
+  
+  p{
+    font-size:12px;
+    margin:20px 20px;
+    color:#F2F2F2;
+  }
+  
+  .circle{
+    width:100px;
+    height:100px;
+    border-radius:100%;
+  }
+  .circle2{
+    position: absolute;
+    left:-30px;
+    bottom:-60px;
+    transition-duration: 0.7s;
+    border: solid 5px #00BFFF;
+  
+  }
+  .circle1{
+    position: absolute;
+    right:-50px;
+    top:-55px;
+    border: solid 5px #00BFFF;
+    transition-duration: 0.7s;
+  }
+  .title{
+    text-align:center;
+    color:#555;
+    font-weight:500;
+    position: absolute;
+    left: 20px;
+    top: 400px
+  }
+  .mark {
+    font-size:250px;
+    right: 50px;
+    bottom: 300px;
+    position: absolute;
+    color: rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  
+  
+  .container:hover .circle1{
+    transition-origin: 50% 50%;
+    transform: scale(20,20);
+    border: solid 20px white;
+  }
+  .container:hover .circle2{
+    transition-origin: 50% 50%;
+    transform: scale(20,20);
+    border: solid 20px white;
+  }
+  
+  .container:hover h2{
+    color: #715CBA;
+  }
+  .container:hover h5{
+    color: #323880;
+    font-weight:border;
+  }
+  .container:hover p{
+    color: #323880;
+    font-weight:border;
+  }
+  
+  .container:hover hr{
+    color: #FFFFFF;
+    font-weight:border;
+  }
+  
