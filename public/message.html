@@ -2,50 +2,66 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <link rel="Shortcut Icon" type="image/x-icon"
-        href="https://scontent.ftpe7-3.fna.fbcdn.net/v/t1.0-9/68827742_724533071350384_4981811800187076608_o.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=K4XCvK4PFaAAX-ZMruj&_nc_ht=scontent.ftpe7-3.fna&oh=66ceefda5b23daf416336f1b16d03638&oe=60464D9A">
-    <title>jhih_yu_0414</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/message.css">
-    <!--google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap"
-        rel="stylesheet">
+  <meta charset="utf-8">
+  <link rel="Shortcut Icon" type="image/x-icon" href="https://scontent.ftpe7-3.fna.fbcdn.net/v/t1.0-9/68827742_724533071350384_4981811800187076608_o.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=K4XCvK4PFaAAX-ZMruj&_nc_ht=scontent.ftpe7-3.fna&oh=66ceefda5b23daf416336f1b16d03638&oe=60464D9A">
+  <title>jhihyulin</title>
+  <link rel="stylesheet" type="text/css" href="css/message.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <!--end-->
+  <!--firebase/firebaseui-web-->
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth__zh_tw.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+  <!--end-->
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/message-login.js"></script>
+  <!--end-->
+  <!--https://darkmodejs.learn.uno/-->
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <script src="js/darkmode.js"></script>
+  <!--end-->
+
 </head>
 
 <body>
-    <div class="box1">
-        <div class="box1-1">
-            <p></p>
-            <textarea type="text" id="message" placeholder="留言" onfocus="this.placeholder=''"
-                onblur="this.placeholder='留言'" required></textarea>
-            <p></p>
-            <input class="button1" id="send" type="submit" value="傳送">
-            <p></p>
-            <input class="button2" id="clean" value="清除" type="button">
-        </div>
+  <div class="box1">
+    <div class="box1-1">
+      <p></p>
+      <div class="box1-1-1">
+        <textarea type="text" id="message" placeholder="留言" onfocus="this.placeholder=''" onblur="this.placeholder='留言'" required></textarea>
+        <p></p>
+        <input class="button-clear" id="clean" value="清除" type="button">
+        <p id="login-state">檢測中</p>
+        <input class="button-send" id="send" type="submit" value="傳送">
+      </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
-    <script src="js/firebase.js"></script>
-    <script src="js/message.js"></script>
-    <!--https://darkmodejs.learn.uno/-->
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script src="js/darkmode.js"></script>
+  </div>
+  <div>
+    <div id="firebase-ui-case">
+      <div id="firebaseui-auth-container"></div>
+    </div>
+    <div>
+      <input type="button" id="logout" value="登出"></input>
+    </div>
+  </div>
 </body>
 </p>
 <footer>
-    <div>
-        <img id="build_with_firebase"
-            src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg">
-    </div>
-    <a href="privacy_policy.html">隱私權條款</a>
-    <a href="information_security_policy.html">資訊安全政策</a>
-    <p>jhih_yu_lin©2021</p>
+  <div>
+    <img id="build_with_firebase" src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg">
+  </div>
+  <a href="privacy_policy.html">隱私權條款</a>
+  <a href="information_security_policy.html">資訊安全政策</a>
+  <p>jhih_yu_lin©2021</p>
 </footer>
 
 </html>
