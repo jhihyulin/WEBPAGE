@@ -143,6 +143,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 */
 
 firebase.auth().onAuthStateChanged(function(user) {
+  console.log("登入狀態改變");
   if (firebase.auth().uid != null) {
     var displayName = user.displayName;
     var email = user.email;
@@ -165,10 +166,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       }
     }
     document.getElementById("login-state").innerHTML = "已由" + display + "登入";
-    document.getElementById("firebaseui-auth-container").style.display = "none";
-  }else{
+    document.getElementById("firebase-ui-case").style.display = "none";
+  } else {
     document.getElementById("login-state").innerHTML = "請先登入";
-    document.getElementById("firebaseui-auth-container").style.display = "block";
+    document.getElementById("firebase-ui-case").style.display = "";
   }
 })
 
