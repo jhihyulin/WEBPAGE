@@ -23,6 +23,7 @@ body {
     border-radius: 10px;
     text-align: center;
     margin: 0 auto;
+    margin: auto;
 }
 
 footer {
@@ -42,7 +43,7 @@ textarea {
     text-align: center;
 }
 
-.button1 {
+.button-send {
     height: 25px;
     width: 75px;
     border-radius: 10px;
@@ -52,9 +53,10 @@ textarea {
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
     outline: none;
     margin: 0 auto;
+    float: right;
 }
 
-.button2 {
+.button-clear {
     height: 20px;
     width: 40px;
     border-radius: 10px;
@@ -64,9 +66,22 @@ textarea {
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
     outline: none;
     margin: 0 auto;
+    float: left;
 }
 
 #build_with_firebase{
     height:82px;
     width:184px;
+}
+
+#login-state{
+  display: inline;
+}
+
+.box1-1-1{
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
+  color: #ffffff;
 }
