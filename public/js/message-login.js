@@ -164,7 +164,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (phoneNumber != null) {
           var display = phoneNumber;
         } else {
-          var display = uid;
+          var display = "訪客";
         }
       }
     }
