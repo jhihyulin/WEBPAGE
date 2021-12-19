@@ -1,4 +1,6 @@
-window.onload = function firebase_ui_web() {
+firebase_ui_web()
+
+function firebase_ui_web() {
   var uiConfig = {
     signInSuccessUrl: 'message.html', //登入後導向哪裡
     signInOptions: [
@@ -144,7 +146,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 firebase.auth().onAuthStateChanged(function(user) {
   console.log("登入狀態改變");
-  if (firebase.auth().uid != null) {
+  if (firebase.auth().currentUser) {
+    console.log("已登入");
     var displayName = user.displayName;
     var email = user.email;
     var emailVerified = user.emailVerified;
@@ -168,12 +171,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("login-state").innerHTML = "已由" + display + "登入";
     document.getElementById("firebase-ui-case").style.display = "none";
   } else {
+    console.log("未登入");
     document.getElementById("login-state").innerHTML = "請先登入";
     document.getElementById("firebase-ui-case").style.display = "";
   }
-})
-
-firebase.auth().onAuthStateChanged(function(user) {
   try {
     if (user.emailVerified == true && user.email != null) {
       console.log("電子郵件已驗證");
@@ -183,7 +184,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       console.log("電子郵件未驗證");
       document.getElementById("send_mail_verification").type = "button";
     } else if (user.email == null) {
-      console.log("匿名登入 不須驗證電子郵件");
+      console.log("非電子郵件登入，不須驗證電子郵件");
     }
   } catch (error) {
     console.log(error);
