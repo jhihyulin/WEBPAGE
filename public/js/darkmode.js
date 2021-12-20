@@ -11,7 +11,7 @@ const options = {
     backgroundColor: '#ffffff', // default: '#fff'
     buttonColorDark: '#000000', // default: '#100f2c'
     buttonColorLight: '#ffffff', // default: '#fff'
-    saveInCookies: false, // default: true,
+    saveInCookies: true, // default: true,
     label: '🌓', // default: ''
     autoMatchOsTheme: true // default: true
 }
