@@ -168,7 +168,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         }
       }
     }
-    document.getElementById("login-state").innerHTML = "已由" + display + "登入";
+    document.getElementById("login-state").innerHTML = display;
     document.getElementById("firebase-ui-case").style.display = "none";
     document.getElementById("logout-case").style.display = "";
   } else {

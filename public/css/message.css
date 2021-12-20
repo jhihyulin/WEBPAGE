@@ -19,7 +19,7 @@ body {
 .box1-1 {
     height: 210px;
     width: 320px;
-    background-color: #204969;
+    background-color: #1F4068;
     border-radius: 10px;
     text-align: center;
     margin: 0 auto;
@@ -47,7 +47,7 @@ textarea {
     height: 25px;
     width: 75px;
     border-radius: 10px;
-    color: black;
+    color: #000000;
     border: 0;
     background-color: #ffffff;
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
@@ -57,12 +57,12 @@ textarea {
 }
 
 .button-clear {
-    height: 20px;
-    width: 40px;
+    height: 25px;
+    width: 75px;
     border-radius: 10px;
-    color: black;
+    color: #ffffff;
     border: 0;
-    background-color: #ffffff;
+    background-color: #E33E5A;
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
     outline: none;
     margin: 0 auto;
@@ -97,7 +97,7 @@ text-align: center
     border-radius: 10px;
     color: #ffffff;
     border: 0;
-    background-color: #ff8888;
+    background-color: #E33E5A;
     font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
     outline: none;
     margin: 0 auto;
