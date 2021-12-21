@@ -93,8 +93,7 @@ function send_to_backend(apps_script_url, message) {
         document.getElementById('send').disabled = false;
       }
     });
-  }
-  catch (error) {
+  } catch (error) {
     swal("錯誤", error, "error");
   }
 }
