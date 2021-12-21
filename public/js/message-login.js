@@ -148,6 +148,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   console.log("登入狀態改變");
   if (firebase.auth().currentUser) {
     console.log("已登入");
+    swal("已登入","本網站尚未完成\n如有錯誤請通知作者","info");
     var displayName = user.displayName;
     var email = user.email;
     var emailVerified = user.emailVerified;
@@ -173,7 +174,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("logout-case").style.display = "";
   } else {
     console.log("未登入");
-    document.getElementById("login-state").innerHTML = "請先登入";
+    swal("未登入","登入後即可管理留言","info");
+    document.getElementById("login-state").innerHTML = "未登入";
     document.getElementById("firebase-ui-case").style.display = "";
     document.getElementById("logout-case").style.display = "none";
   }

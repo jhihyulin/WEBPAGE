@@ -2,104 +2,89 @@
 <html lang="zh-TW">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="Shortcut Icon" type="image/x-icon"
-        href="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg">
-    <title>COVID-19台灣疫情現況</title>
-    <!--js-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!--js end-->
-    <!--css-->
-    <link rel="stylesheet" type="text/css" href="css/COVID-19.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--css end-->
-    <!--google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap"
-        rel="stylesheet">
-    <!--google font end-->
-    <!--firebase-->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
-    <script src="js/firebase.js"></script>
-    <!--firebase end-->
-    <!--https://darkmodejs.learn.uno/-->
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script src="js/darkmode.js"></script>
-    <!--darkmode end-->
+  <meta charset="UTF-8">
+  <link rel="Shortcut Icon" type="image/x-icon" href="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg">
+  <title>COVID-19台灣疫情現況</title>
+  <!--js-->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!--js end-->
+  <!--css-->
+  <link rel="stylesheet" type="text/css" href="css/COVID-19.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--css end-->
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <!--google font end-->
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
+  <script src="js/firebase.js"></script>
+  <!--firebase end-->
+  <!--https://darkmodejs.learn.uno/-->
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <script src="js/darkmode.js"></script>
+  <!--darkmode end-->
 </head>
 
 <body>
-    <div id="" class="title">
-        <p>台灣疫情現況</p>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_21e6afd5-1359-4206-87ca-00a58b08950d" title="台灣疫情統計"
-            src="https://e.infogram.com/js/dist/embed.js?dy9" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_0513a308-7f58-4bfa-94b6-66f6ebf55803" title="病例校正回歸 新增確診數"
-            src="https://e.infogram.com/js/dist/embed.js?u2n" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_b7aa991d-30e6-452e-9269-8d6a8efb99cb" title="死亡個案統計"
-            src="https://e.infogram.com/js/dist/embed.js?AZh" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_1b5e8a8c-905e-4e8d-a4ba-33c8d47c2e7c" title="死亡人數變化"
-            src="https://e.infogram.com/js/dist/embed.js?0lD" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_e52a72a2-3b03-4a89-9843-f78af237eba8" title="縣市疫情數"
-            src="https://e.infogram.com/js/dist/embed.js?a1H" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_d1d57792-6bff-450c-87d2-baf215df41e3" title="各縣市累計本土案例"
-            src="https://e.infogram.com/js/dist/embed.js?49G" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_ce8a335e-de31-42fa-abfc-96659e7fea53" title="雙北本土病例"
-            src="https://e.infogram.com/js/dist/embed.js?Jp9" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_31809aa2-038e-48f4-8a38-1ce82d0b1e1a" title="14天平均確診數前10名國家"
-            src="https://e.infogram.com/js/dist/embed.js?Svw" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_bbecdbe1-ff02-4664-96c0-2742685e6209" title="疫苗施打總覽"
-            src="https://e.infogram.com/js/dist/embed.js?bfq" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_f25f5a66-bd5e-4272-b4b4-be1258a276a8" title="疫苗施打統計"
-            src="https://e.infogram.com/js/dist/embed.js?Mwg" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_49792900-1899-43e4-97c5-2dd2423182e6" title="COVID-19疫苗到貨狀況"
-            src="https://e.infogram.com/js/dist/embed.js?yfn" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_c6044bf3-c82d-4a04-bf3b-050bfe97dd87" title="台灣COVID-19疫苗統計"
-            src="https://e.infogram.com/js/dist/embed.js?J0d" type="text/javascript"></script>
-    </div>
-    <div id="" class="graph">
-        <script id="infogram_0_233e9801-5f83-44fa-8a9d-774ab20837e8" title="各縣市疫苗施打情形"
-            src="https://e.infogram.com/js/dist/embed.js?Cw5" type="text/javascript"></script>
-    </div>
-    <div id="" class="map">
-        <iframe id="city_today_map" src="https://covid19.biobank.org.tw/narl/city_today.aspx"></iframe>
-    </div>
+  <div id="" class="title">
+    <p>台灣疫情現況</p>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_21e6afd5-1359-4206-87ca-00a58b08950d" title="台灣疫情統計" src="https://e.infogram.com/js/dist/embed.js?dy9" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_0513a308-7f58-4bfa-94b6-66f6ebf55803" title="病例校正回歸 新增確診數" src="https://e.infogram.com/js/dist/embed.js?u2n" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_b7aa991d-30e6-452e-9269-8d6a8efb99cb" title="死亡個案統計" src="https://e.infogram.com/js/dist/embed.js?AZh" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_1b5e8a8c-905e-4e8d-a4ba-33c8d47c2e7c" title="死亡人數變化" src="https://e.infogram.com/js/dist/embed.js?0lD" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_e52a72a2-3b03-4a89-9843-f78af237eba8" title="縣市疫情數" src="https://e.infogram.com/js/dist/embed.js?a1H" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_d1d57792-6bff-450c-87d2-baf215df41e3" title="各縣市累計本土案例" src="https://e.infogram.com/js/dist/embed.js?49G" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_ce8a335e-de31-42fa-abfc-96659e7fea53" title="雙北本土病例" src="https://e.infogram.com/js/dist/embed.js?Jp9" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_31809aa2-038e-48f4-8a38-1ce82d0b1e1a" title="14天平均確診數前10名國家" src="https://e.infogram.com/js/dist/embed.js?Svw" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_bbecdbe1-ff02-4664-96c0-2742685e6209" title="疫苗施打總覽" src="https://e.infogram.com/js/dist/embed.js?bfq" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_f25f5a66-bd5e-4272-b4b4-be1258a276a8" title="疫苗施打統計" src="https://e.infogram.com/js/dist/embed.js?Mwg" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_49792900-1899-43e4-97c5-2dd2423182e6" title="COVID-19疫苗到貨狀況" src="https://e.infogram.com/js/dist/embed.js?yfn" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_c6044bf3-c82d-4a04-bf3b-050bfe97dd87" title="台灣COVID-19疫苗統計" src="https://e.infogram.com/js/dist/embed.js?J0d" type="text/javascript"></script>
+  </div>
+  <div id="" class="graph">
+    <script id="infogram_0_233e9801-5f83-44fa-8a9d-774ab20837e8" title="各縣市疫苗施打情形" src="https://e.infogram.com/js/dist/embed.js?Cw5" type="text/javascript"></script>
+  </div>
+  <div id="" class="map">
+    <iframe id="city_today_map" src="https://covid19.biobank.org.tw/narl/city_today.aspx"></iframe>
+  </div>
 </body>
 </p>
 <footer>
-    <div>
-        <img id="build_with_firebase"
-            src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg">
-    </div>
-    <a href="privacy_policy.html">隱私權條款</a>
-    <a href="information_security_policy.html">資訊安全政策</a>
-    <p>jhih_yu_lin©2021</p>
+  <div>
+    <img id="build_with_firebase" src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg">
+  </div>
+  <a href="terms_of_service.html">服務條款</a>
+  <a href="privacy_policy.html">隱私權條款</a>
+  <a href="information_security_policy.html">資訊安全政策</a>
+  <p>jhih_yu_lin©2021</p>
 </footer>
 
 </html>
