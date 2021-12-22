@@ -102,3 +102,7 @@ text-align: center
     outline: none;
     margin: 0 auto;
 }
+
+a {
+  text-decoration: none;
+}

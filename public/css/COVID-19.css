@@ -120,3 +120,7 @@ html{
     height:82px;
     width:184px;
 }
+
+a {
+  text-decoration: none;
+}
