@@ -155,8 +155,6 @@ function reAuth(checkPassword) {
   })
 }
 
-var apps_script_url = "";
-
 var clean = document.getElementById("clean");
 clean.addEventListener('click', function clean() {
   document.querySelector("#message").value = "";
