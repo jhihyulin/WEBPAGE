@@ -1,5 +1,3 @@
-firebase_ui_web()
-
 function firebase_ui_web() {
   var uiConfig = {
     signInSuccessUrl: 'message.html', //登入後導向哪裡
@@ -29,13 +27,6 @@ function firebase_ui_web() {
   var ui = new firebaseui.auth.AuthUI(firebase.auth());
   // The start method will wait until the DOM is loaded.
   ui.start('#firebaseui-auth-container', uiConfig);
-}
-window.onload = function() {
-  var logout_bton = document.getElementById("logout");
-  logout_bton.addEventListener('click', function() {
-    console.log("logout start")
-    logout()
-  }, false)
 }
 
 function logout() {
@@ -164,6 +155,16 @@ var send = document.getElementById("send");
 send.addEventListener('click', function send() {
   check_info();
 }, false)
+
+var logout_bton = document.getElementById("logout");
+logout_bton.addEventListener('click', function logout_bton() {
+  console.log("logout start");
+  logout();
+}, false)
+
+window.onload = function() {
+  firebase_ui_web();
+}
 
 function check_info() {
   console.log("test--1");
