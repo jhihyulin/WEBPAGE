@@ -73,8 +73,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById("logout-case").style.display = "";
     var db = firebase.firestore();
     var ref = db.collection("user").doc(uid);
-    //TO:DO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
     console.log("try update user");
     ref.update({
       uid: uid,
@@ -121,20 +119,72 @@ firebase.auth().onAuthStateChanged(function (user) {
   } catch (error) {
     console.log(error);
   }
+  try {
+    var db = firebase.firestore();
+    db.collection("user").doc(uid).onSnapshot(doc => {
+      console.log(doc.data());
+      if (doc.data().role == "admin") {
+        document.getElementById("admin_case").style.display = "";
+      } else {
+        document.getElementById("admin_case").style.display = "none";
+      }
+    })
+    .catch(error => {
+      document.getElementById("admin_case").style.display = "none";
+    });
+  } catch (error) {
+    document.getElementById("admin_case").style.display = "none";
+  }
 });
 
-var clean = document.getElementById("clean");
-clean.addEventListener('click', function clean() {
+function get_data() {
+  var db = firebase.firestore();
+  db.collection("message").orderBy("timestamp", "desc")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+        //div
+        var data_div = document.createElement('div');
+        data_div.setAttribute('class', 'firestore_data');
+        data_div.setAttribute('id', 'firestore_' + doc.id);
+        document.getElementById('firestore_data').appendChild(data_div);
+        //message
+        var data_p = document.createElement('p');
+        data_p.textContent = doc.data().message;
+        data_p.setAttribute('class', 'firestore_data_p');
+        data_p.setAttribute('id', 'firestore_' + doc.id + '_p');
+        document.getElementById('firestore_' + doc.id).appendChild(data_p);
+        //timestamp
+        var data_timestamp = document.createElement('p');
+        data_timestamp.textContent = doc.data().timeString;
+        data_timestamp.setAttribute('class', 'firestore_data_timestamp');
+        data_timestamp.setAttribute('id', 'firestore_' + doc.id + '_timestamp');
+        document.getElementById('firestore_' + doc.id).appendChild(data_timestamp);
+      });
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+}
+
+var get_data_listner = document.getElementById("firestore_get_data");
+get_data_listner.addEventListener("click", function () {
+  get_data();
+}, false)
+
+var clean_listner = document.getElementById("clean");
+clean_listner.addEventListener('click', function clean() {
   document.querySelector("#message").value = "";
 }, false)
 
-var send = document.getElementById("send");
-send.addEventListener('click', function send() {
+var send_listner = document.getElementById("send");
+send_listner.addEventListener('click', function send() {
   check_info();
 }, false)
 
-var logout_bton = document.getElementById("logout");
-logout_bton.addEventListener('click', function logout_bton() {
+var logout_listner = document.getElementById("logout");
+logout_listner.addEventListener('click', function () {
   console.log("logout start");
   logout();
 }, false)
