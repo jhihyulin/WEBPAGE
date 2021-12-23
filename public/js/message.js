@@ -156,11 +156,11 @@ function get_data() {
         data_p.setAttribute('id', 'firestore_' + doc.id + '_p');
         document.getElementById('firestore_' + doc.id).appendChild(data_p);
         //timestamp
-        var data_timestamp = document.createElement('p');
-        data_timestamp.textContent = doc.data().timeString;
-        data_timestamp.setAttribute('class', 'firestore_data_timestamp');
-        data_timestamp.setAttribute('id', 'firestore_' + doc.id + '_timestamp');
-        document.getElementById('firestore_' + doc.id).appendChild(data_timestamp);
+        var data_timeString = document.createElement('p');
+        data_timeString.textContent = doc.data().timeString;
+        data_timeString.setAttribute('class', 'firestore_data_timeString');
+        data_timeString.setAttribute('id', 'firestore_' + doc.id + '_timeString');
+        document.getElementById('firestore_' + doc.id).appendChild(data_timeString);
       });
     })
     .catch((error) => {
