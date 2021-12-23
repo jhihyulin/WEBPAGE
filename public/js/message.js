@@ -2,24 +2,24 @@ function firebase_ui_web() {
   var uiConfig = {
     signInSuccessUrl: 'message.html', //登入後導向哪裡
     signInOptions: [
-            // Leave the lines as is for the providers you want to offer your users.
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            firebase.auth.GithubAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      // Leave the lines as is for the providers you want to offer your users.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
       {
         provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
         defaultCountry: 'TW'
-            },
-            firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
-        ],
+      },
+      firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+    ],
     // tosUrl and privacyPolicyUrl accept either url string or a callback
     // function.
     // Terms of service url/callback.
     tosUrl: 'information_security_policy.html',
     // Privacy policy url/callback.
-    privacyPolicyUrl: function() {
+    privacyPolicyUrl: function () {
       window.location.assign('privacy_policy.html');
     }
   };
@@ -31,19 +31,19 @@ function firebase_ui_web() {
 
 function logout() {
   firebase.auth().signOut()
-    .then(function() {
+    .then(function () {
       swal("登出成功", "", "success");
       console.log("登出成功");
       // 登出後強制重整一次頁面
       window.location.reload();
-    }).catch(function(error) {
+    }).catch(function (error) {
       swal("登出錯誤", error.message, "error");
       console.log("登出錯誤");
       console.log(error.message)
     });
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   console.log("登入狀態改變");
   if (firebase.auth().currentUser) {
     console.log("已登入");
@@ -73,7 +73,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("logout-case").style.display = "";
     var db = firebase.firestore();
     var ref = db.collection("user").doc(uid);
-    ref.set({
+    //TO:DO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    console.log("try update user");
+    ref.update({
       uid: uid,
       displayName: displayName,
       emailVerified: emailVerified,
@@ -81,8 +84,22 @@ firebase.auth().onAuthStateChanged(function(user) {
       photoURL: photoURL,
       phoneNumber: phoneNumber
     }).then(() => {
-      console.log('set user data successful');
-    });
+      console.log('update user data successful');
+    })
+      .catch(error => {
+        console.log("try set user");
+        ref.set({
+          uid: uid,
+          displayName: displayName,
+          emailVerified: emailVerified,
+          email: email,
+          photoURL: photoURL,
+          phoneNumber: phoneNumber
+        }).then(() => {
+          console.log('set user data successful');
+        });
+      }
+      )
   } else {
     console.log("未登入");
     swal("未登入", "登入後即可管理留言", "info");
@@ -106,46 +123,6 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-function send_mail_verification() {
-  var user = firebase.auth().currentUser;
-  user
-    .sendEmailVerification()
-    .then(function() {
-      // 驗證信發送完成
-      swal("認證信已發送到您的信箱", "請前往信箱點擊連結進行認證", "success");
-    }).catch(error => {
-      // 驗證信發送失敗
-      swal("認證信發送失敗", error.message, "error");
-      console.log(error.message);
-    });
-}
-
-function forget_password() {
-  // html 要有一個 <input id="forgot" type="email"> 讓使用者 email
-  // 執行發件
-  const emailAddress = document.getElementById('forgot').value;
-  const auth = firebase.auth();
-  auth.sendPasswordResetEmail(emailAddress).then(function() {
-    window.alert('已發送信件至信箱，請按照信件說明重設密碼');
-    window.location.reload(); // 送信後，強制頁面重整一次
-  }).catch(function(error) {
-    console.log(error.message)
-  });
-}
-
-function reAuth(checkPassword) {
-  return new Promise(function(resolve, reject) {
-    var user = firebase.auth().currentUser;
-    var password = document.getElementById(checkPassword).value;
-    var credential = firebase.auth.EmailAuthProvider.credential(user.email, password);
-    user.reauthenticateWithCredential(credential).then(function() {
-      resolve(user)
-    }).catch(function(error) {
-      reject(error.message);
-    });
-  })
-}
-
 var clean = document.getElementById("clean");
 clean.addEventListener('click', function clean() {
   document.querySelector("#message").value = "";
@@ -161,10 +138,6 @@ logout_bton.addEventListener('click', function logout_bton() {
   console.log("logout start");
   logout();
 }, false)
-
-window.onload = function() {
-  firebase_ui_web();
-}
 
 function check_info() {
   console.log("test--1");
@@ -241,4 +214,8 @@ function write_database(message) {
     document.getElementById('send').value = "傳送";
     document.getElementById('send').disabled = false;
   }
+}
+
+window.onload = function () {
+  firebase_ui_web();
 }
