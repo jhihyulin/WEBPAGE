@@ -116,8 +116,7 @@ a {
   border: 2px #1F4068 solid;
   border-radius: 10px;
   margin: 5px;
-  min-height: 75px;
-  position:relative;
+  height: auto;
 }
 
 #firestore_get_data {
@@ -138,17 +137,11 @@ a {
 }
 
 .firestore_data_p {
-  float: left;
   margin: 5px;
-  position:absolute;
-  left: 0;
-  top: 0;
+  height: auto;
 }
 
 .firestore_data_timeString {
-  float: right;
   margin: 5px;
-  position:absolute;
-  right: 0;
-  bottom: 0;
+  text-align: right;
 }
