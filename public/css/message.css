@@ -17,7 +17,6 @@ body {
 }
 
 .box1-1 {
-  height: 12em;
   width: 21em;
   background-color: #1F4068;
   border-radius: 10px;
@@ -40,7 +39,7 @@ textarea {
   outline: none;
   resize: none;
   text-align: center;
-  margin: 0 auto;
+  margin: 5px auto;
 }
 
 .button-send {
@@ -52,7 +51,7 @@ textarea {
   background-color: #ffffff;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
-  margin: 0 auto;
+  margin: 5px 15px 15px 15px;
   float: right;
 }
 
@@ -65,7 +64,7 @@ textarea {
   background-color: #E33E5A;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
-  margin: 0 auto;
+  margin: 5px 15px 15px 15px;
   float: left;
 }
 
@@ -76,11 +75,12 @@ textarea {
 
 #login-state {
   display: inline;
+  margin: 5px auto 15px auto;
 }
 
 .box1-1-1 {
   text-align: center;
-  width: 90%;
+  width: 100%;
   margin: auto;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   color: #ffffff;
@@ -129,7 +129,7 @@ a {
   margin: 5px;
   height: auto;
   width: 21em;
-  margin: auto;
+  margin: 5px auto;
 }
 
 #firestore_get_data {
