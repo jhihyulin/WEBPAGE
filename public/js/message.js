@@ -148,7 +148,7 @@ function get_data() {
         var data_div = document.createElement('div');
         data_div.setAttribute('class', 'firestore_data');
         data_div.setAttribute('id', 'firestore_' + doc.id);
-        document.getElementById('firestore_data').appendChild(data_div);
+        document.getElementById('firestore_data_case').appendChild(data_div);
         //message
         var data_p = document.createElement('p');
         data_p.textContent = doc.data().message;

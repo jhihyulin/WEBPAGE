@@ -17,12 +17,11 @@ body {
 }
 
 .box1-1 {
-  height: 210px;
-  width: 320px;
+  height: 12em;
+  width: 21em;
   background-color: #1F4068;
   border-radius: 10px;
   text-align: center;
-  margin: 0 auto;
   margin: auto;
 }
 
@@ -31,8 +30,8 @@ footer {
 }
 
 textarea {
-  height: 125px;
-  width: 275px;
+  height: 7em;
+  width: 18em;
   border-radius: 10px;
   border: 0;
   color: black;
@@ -41,6 +40,7 @@ textarea {
   outline: none;
   resize: none;
   text-align: center;
+  margin: 0 auto;
 }
 
 .button-send {
@@ -112,11 +112,24 @@ a {
   text-decoration: none;
 }
 
+#firestore_case {
+  width: 100%;
+}
+
+#firestore_data_case {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
 .firestore_data {
   border: 2px #1F4068 solid;
   border-radius: 10px;
   margin: 5px;
   height: auto;
+  width: 21em;
+  margin: auto;
 }
 
 #firestore_get_data {
