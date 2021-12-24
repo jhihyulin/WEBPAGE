@@ -140,7 +140,6 @@ a {
   margin: 5px;
   height: auto;
   width: 21em;
-  margin: 0.5rem auto;
 }
 
 #firestore_get_data {
@@ -153,6 +152,19 @@ a {
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
   margin: 0.5rem;
+}
+
+#get_data_quantity {
+  height: 1.2rem;
+  max-width: 4rem;
+  border-radius: 0.75rem;
+  color: #000000;
+  border: 2px #1F4068 solid;
+  background-color: transparent;
+  font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
+  outline: none;
+  margin: 0.5rem;
+  text-align: center;
 }
 
 #admin_case {

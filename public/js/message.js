@@ -19,7 +19,7 @@ function firebase_ui_web() {
     // Terms of service url/callback.
     tosUrl: 'information_security_policy.html',
     // Privacy policy url/callback.
-    privacyPolicyUrl: function () {
+    privacyPolicyUrl: function() {
       window.location.assign('privacy_policy.html');
     }
   };
@@ -31,19 +31,19 @@ function firebase_ui_web() {
 
 function logout() {
   firebase.auth().signOut()
-    .then(function () {
+    .then(function() {
       swal("登出成功", "", "success");
       console.log("登出成功");
       // 登出後強制重整一次頁面
       window.location.reload();
-    }).catch(function (error) {
+    }).catch(function(error) {
       swal("登出錯誤", error.message, "error");
       console.log("登出錯誤");
       console.log(error.message)
     });
 }
 
-firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged(function(user) {
   console.log("登入狀態改變");
   if (firebase.auth().currentUser) {
     console.log("已登入");
@@ -75,15 +75,15 @@ firebase.auth().onAuthStateChanged(function (user) {
     var ref = db.collection("user").doc(uid);
     console.log("try update user");
     ref.update({
-      uid: uid,
-      displayName: displayName,
-      emailVerified: emailVerified,
-      email: email,
-      photoURL: photoURL,
-      phoneNumber: phoneNumber
-    }).then(() => {
-      console.log('update user data successful');
-    })
+        uid: uid,
+        displayName: displayName,
+        emailVerified: emailVerified,
+        email: email,
+        photoURL: photoURL,
+        phoneNumber: phoneNumber
+      }).then(() => {
+        console.log('update user data successful');
+      })
       .catch(error => {
         console.log("try set user");
         ref.set({
@@ -96,8 +96,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         }).then(() => {
           console.log('set user data successful');
         });
-      }
-      )
+      })
   } else {
     console.log("未登入");
     swal("未登入", "登入後即可管理留言", "info");
@@ -122,16 +121,16 @@ firebase.auth().onAuthStateChanged(function (user) {
   try {
     var db = firebase.firestore();
     db.collection("user").doc(uid).onSnapshot(doc => {
-      console.log(doc.data());
-      if (doc.data().role == "admin") {
-        document.getElementById("admin_case").style.display = "";
-      } else {
+        console.log(doc.data());
+        if (doc.data().role == "admin") {
+          document.getElementById("admin_case").style.display = "";
+        } else {
+          document.getElementById("admin_case").style.display = "none";
+        }
+      })
+      .catch(error => {
         document.getElementById("admin_case").style.display = "none";
-      }
-    })
-    .catch(error => {
-      document.getElementById("admin_case").style.display = "none";
-    });
+      });
   } catch (error) {
     document.getElementById("admin_case").style.display = "none";
   }
@@ -139,7 +138,11 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 function get_data() {
   var db = firebase.firestore();
+  var get_data_quantity = document.getElementById("get_data_quantity").value;
+  //clear
+  document.getElementById('firestore_data_case').innerHTML = "";
   db.collection("message").orderBy("timestamp", "desc")
+    .limit(get_data_quantity)
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -157,7 +160,9 @@ function get_data() {
         document.getElementById('firestore_' + doc.id).appendChild(data_p);
         //timestamp
         var data_timeString = document.createElement('p');
-        data_timeString.textContent = doc.data().timeString;
+        data_date = doc.data().timestamp.toDate().toLocaleDateString('zh-TW')
+        data_time = doc.data().timestamp.toDate().toLocaleTimeString('zh-TW')
+        data_timeString.textContent = data_date + data_time;
         data_timeString.setAttribute('class', 'firestore_data_timeString');
         data_timeString.setAttribute('id', 'firestore_' + doc.id + '_timeString');
         document.getElementById('firestore_' + doc.id).appendChild(data_timeString);
@@ -169,7 +174,7 @@ function get_data() {
 }
 
 var get_data_listner = document.getElementById("firestore_get_data");
-get_data_listner.addEventListener("click", function () {
+get_data_listner.addEventListener("click", function() {
   get_data();
 }, false)
 
@@ -184,7 +189,7 @@ send_listner.addEventListener('click', function send() {
 }, false)
 
 var logout_listner = document.getElementById("logout");
-logout_listner.addEventListener('click', function () {
+logout_listner.addEventListener('click', function() {
   console.log("logout start");
   logout();
 }, false)
@@ -266,6 +271,6 @@ function write_database(message) {
   }
 }
 
-window.onload = function () {
+window.onload = function() {
   firebase_ui_web();
 }
