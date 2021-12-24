@@ -43,7 +43,7 @@ footer {
 }
 
 .button-send {
-  height: 1.5rem;
+  height: 1.75rem;
   width: 4rem;
   border-radius: 0.75rem;
   color: #000000;
@@ -57,7 +57,7 @@ footer {
 }
 
 .button-clear {
-  height: 1.5rem;
+  height: 1.75rem;
   width: 4rem;
   border-radius: 0.75rem;
   color: #000000;
@@ -76,9 +76,8 @@ footer {
 }
 
 #login-state {
-  vertical-align: middle;
   max-width: 8rem;
-  height: 1.25rem;
+  height: 1.5rem;
   padding: 0 0.75rem;
   margin: 0 auto 0 auto;
   color: #000000;
