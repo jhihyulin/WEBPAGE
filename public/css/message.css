@@ -51,7 +51,7 @@ footer {
   background-color: transparent;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 1rem 1rem auto;
   float: right;
   display: inline;
 }
@@ -65,7 +65,7 @@ footer {
   background-color: transparent;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 auto 1rem 1rem;
   float: left;
   display: inline;
 }
@@ -77,16 +77,18 @@ footer {
 
 #login-state {
   vertical-align: middle;
-  max-width: 6rem;
-  height: 1.5em;
-  padding: 0 1rem;
-  display: inline;
+  max-width: 8rem;
+  height: 1.25rem;
+  padding: 0 0.75rem;
   margin: 0 auto 0 auto;
   color: #000000;
   border: 2px #1F4068 solid;
   border-radius: 0.75rem;
-  float: center;
+  display: inline-block;
   outline: none;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .box1-1-1 {
