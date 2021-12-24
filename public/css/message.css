@@ -18,7 +18,7 @@ body {
 
 .box1-1 {
   width: 21em;
-  background-color: #1F4068;
+  background-color: transparent;
   border-radius: 10px;
   text-align: center;
   margin: auto;
@@ -28,44 +28,46 @@ footer {
   text-align: center;
 }
 
-textarea {
-  height: 7em;
-  width: 18em;
-  border-radius: 10px;
-  border: 0;
+.input_textarea {
+  height: 8rem;
+  width: 18rem;
+  border-radius: 0.75rem;
+  border: 2px #1F4068 solid;
   color: black;
-  background-color: #ffffff;
+  background-color: transparent;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
   resize: none;
   text-align: center;
-  margin: 5px auto;
+  margin: 1rem auto 0.5rem;
 }
 
 .button-send {
-  height: 25px;
-  width: 75px;
-  border-radius: 10px;
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.75rem;
   color: #000000;
-  border: 0;
-  background-color: #ffffff;
+  border: 2px #1F4068 solid;
+  background-color: transparent;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
-  margin: 5px 15px 15px 15px;
+  margin: 0 1rem 1rem 1rem;
   float: right;
+  display: inline;
 }
 
 .button-clear {
-  height: 25px;
-  width: 75px;
-  border-radius: 10px;
-  color: #ffffff;
-  border: 0;
-  background-color: #E33E5A;
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.75rem;
+  color: #000000;
+  border: 2px #E33E5A solid;
+  background-color: transparent;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
-  margin: 5px 15px 15px 15px;
+  margin: 0 1rem 1rem 1rem;
   float: left;
+  display: inline;
 }
 
 #build_with_firebase {
@@ -74,8 +76,17 @@ textarea {
 }
 
 #login-state {
+  vertical-align: middle;
+  max-width: 6rem;
+  height: 1.5em;
+  padding: 0 1rem;
   display: inline;
-  margin: 5px auto 15px auto;
+  margin: 0 auto 0 auto;
+  color: #000000;
+  border: 2px #1F4068 solid;
+  border-radius: 0.75rem;
+  float: center;
+  outline: none;
 }
 
 .box1-1-1 {
@@ -83,7 +94,7 @@ textarea {
   width: 100%;
   margin: auto;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
-  color: #ffffff;
+  color: transparent;
 }
 
 #logout-case {
@@ -92,12 +103,12 @@ textarea {
 }
 
 #logout {
-  height: 25px;
-  width: 75px;
-  border-radius: 10px;
-  color: #ffffff;
-  border: 0;
-  background-color: #E33E5A;
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.75rem;
+  color: #000000;
+  border: 2px #E33E5A solid;
+  background-color: transparent;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
   margin: 0 auto;
@@ -129,19 +140,19 @@ a {
   margin: 5px;
   height: auto;
   width: 21em;
-  margin: 5px auto;
+  margin: 0.5rem auto;
 }
 
 #firestore_get_data {
-  height: 25px;
-  width: 75px;
-  border-radius: 10px;
-  color: #ffffff;
-  border: 0;
-  background-color: #1F4068;
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.75rem;
+  color: #000000;
+  border: 2px #1F4068 solid;
+  background-color: transparent;
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
   outline: none;
-  margin: 5px;
+  margin: 0.5rem;
 }
 
 #admin_case {
