@@ -19,7 +19,7 @@ body {
 .box1-1 {
   width: 21em;
   background-color: transparent;
-  border-radius: 10px;
+  border-radius: 1rem;
   text-align: center;
   margin: auto;
 }
@@ -30,7 +30,7 @@ footer {
 
 .input_textarea {
   height: 8rem;
-  width: 18rem;
+  width: 20rem;
   border-radius: 0.75rem;
   border: 2px #1F4068 solid;
   color: black;
@@ -39,7 +39,7 @@ footer {
   outline: none;
   resize: none;
   text-align: center;
-  margin: 1rem auto 0.5rem;
+  margin: 1rem auto 0.5rem auto;
 }
 
 .button-send {
@@ -138,10 +138,10 @@ a {
 
 .firestore_data {
   border: 2px #1F4068 solid;
-  border-radius: 10px;
-  margin: 5px;
+  border-radius: 1rem;
+  margin: 0.5rem auto;
   height: auto;
-  width: 21em;
+  width: 20rem;
 }
 
 #firestore_get_data {
@@ -151,7 +151,7 @@ a {
   color: #000000;
   border: 2px #1F4068 solid;
   background-color: transparent;
-  font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
+  font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;  
   outline: none;
   margin: 0.5rem;
 }
@@ -175,11 +175,11 @@ a {
 }
 
 .firestore_data_p {
-  margin: 5px;
+  margin: 0.5rem;
   height: auto;
 }
 
 .firestore_data_timeString {
-  margin: 5px;
+  margin: 0.5rem;
   text-align: right;
 }
