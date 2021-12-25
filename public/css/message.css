@@ -104,7 +104,7 @@ footer {
 }
 
 #logout {
-  height: 1.5rem;
+  height: 1.6rem;
   width: 4rem;
   border-radius: 0.75rem;
   color: #000000;
@@ -144,8 +144,7 @@ a {
 }
 
 #firestore_get_data {
-  height: 1.5rem;
-  width: 4rem;
+  height: 1.6rem;
   border-radius: 0.75rem;
   color: #000000;
   border: 2px #1F4068 solid;
@@ -153,6 +152,7 @@ a {
   font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;  
   outline: none;
   margin: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 #get_data_quantity {
