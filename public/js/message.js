@@ -199,8 +199,8 @@ function check_info() {
   var message = document.querySelector("#message").value;
   swal({
     icon: "info",
-    title: "↓請確認輸入的內容↓",
-    text: message,
+    title: "確定要傳送嗎？",
+    text: "您輸入的內容" + "：「" + message + "」",
     buttons: {
       A: {
         text: "取消",
