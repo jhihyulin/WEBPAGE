@@ -1,6 +1,6 @@
 {
   "hosting": {
-  "site": "jhihyulin",
+    "site": "jhihyulin",
     "public": "public",
     "ignore": [
       "firebase.json",
@@ -13,5 +13,9 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
