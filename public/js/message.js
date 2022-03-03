@@ -71,6 +71,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("login-state").innerHTML = display;
     document.getElementById("firebase-ui-case").style.display = "none";
     document.getElementById("logout-case").style.display = "";
+    document.getElementById("firestore_data_loading").style.display = "none";
     var db = firebase.firestore();
     var ref = db.collection("user").doc(uid);
     console.log("try update user");
@@ -103,6 +104,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("login-state").innerHTML = "未登入";
     document.getElementById("firebase-ui-case").style.display = "";
     document.getElementById("logout-case").style.display = "none";
+    document.getElementById("firestore_data_loading").style.display = "none";
   }
   try {
     if (user.emailVerified == true && user.email != null) {
@@ -133,6 +135,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       });
   } catch (error) {
     document.getElementById("admin_case").style.display = "none";
+    document.getElementById("firestore_data_loading").style.display = "none";
   }
 });
 
@@ -141,6 +144,7 @@ function get_data() {
   var get_data_quantity = document.getElementById("get_data_quantity").value;
   //clear
   document.getElementById('firestore_data_case').innerHTML = "";
+  document.getElementById("firestore_data_loading").style.display = "";
   db.collection("message").orderBy("timestamp", "desc")
     .limit(get_data_quantity)
     .get()
@@ -167,6 +171,7 @@ function get_data() {
         data_timeString.setAttribute('id', 'firestore_' + doc.id + '_timeString');
         document.getElementById('firestore_' + doc.id).appendChild(data_timeString);
       });
+      document.getElementById("firestore_data_loading").style.display = "none";
     })
     .catch((error) => {
       console.log("Error getting documents: ", error);
@@ -273,4 +278,5 @@ function write_database(message) {
 
 window.onload = function() {
   firebase_ui_web();
+  document.getElementById("firestore_data_loading").style.display = "none";
 }
