@@ -22,36 +22,37 @@
         width: 90%;
         height: 90%;
         margin: 0px auto;
-        font-size: 10vmin;
+        font-size: 8vmin;
     }
 }
 
 @media (min-width: 800px) {
     .c1{
-        width: 70%;
+        width: 50%;
         height: 70%;
         margin: 0px auto;
-        font-size: 8vmin;
+        font-size: 5vmin;
     }
 }
 
 @media (min-width: 1000px) {
     .c1{
-        width: 50%;
+        width: 30%;
         height: 50%;
         margin: 0px auto;
-        font-size: 6vmin;
+        font-size: 3vmin;
     }
 }
 
 .c1{
     background-color: #204969;
     border-radius: 10px;
+    margin: 0 auto;
 }
 
 .c1 p{
     color: #ffffff;
-
+    width: 100%;
 }
 
 html{
@@ -73,6 +74,7 @@ p{
 
 .c1 a{
     color: #ffffff;
+    width: 100%;
 }
 
 #clock{
@@ -90,5 +92,5 @@ footer{
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
