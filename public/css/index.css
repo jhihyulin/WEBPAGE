@@ -121,13 +121,11 @@ p {
 }
 
 .container:hover .circle1 {
-    transition-origin: 50% 50%;
     transform: scale(20, 20);
     border: solid 20px white;
 }
 
 .container:hover .circle2 {
-    transition-origin: 50% 50%;
     transform: scale(20, 20);
     border: solid 20px white;
 }
@@ -163,20 +161,20 @@ p {
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-  
+
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-  
+
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-  
+
     /* Support for IE. */
     font-feature-settings: 'liga';
-  }
+}
 
-  .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
 .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
 
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
@@ -188,5 +186,5 @@ p {
 .material-icons.md-48 { font-size: 48px; }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
