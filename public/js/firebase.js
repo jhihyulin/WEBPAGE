@@ -1,6 +1,6 @@
 const firebaseConfig = {
   apiKey: "AIzaSyCD9r1BoMkQ7_lzschLnh-rYaMsA7LpEQs",
-  authDomain: "webpage-349c7.firebaseapp.com",
+  authDomain: "jhihyulin.live",
   databaseURL: "https://webpage-349c7-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "webpage-349c7",
   storageBucket: "webpage-349c7.appspot.com",
