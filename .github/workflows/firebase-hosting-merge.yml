@@ -14,6 +14,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: git hash
+        run:
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          git_branch=${GITHUB_REF#refs/heads/}
+          git_version=${git_branch}.${git_hash}
       - name: deploy to firebase
         id: deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -29,5 +34,5 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             已透過正式管道部屬
-            預覽連結:${{ steps.deploy.outputs.details_url }}
-            到期時間:${{ steps.deploy.outputs.expire_time }}
+            ${{ git_version }}
+            https://jhihyulin.live
