@@ -19,10 +19,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBPAGE_349C7 }}'
           channelId: 'pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}'
           projectId: webpage-349c7
-  sendMessage:
-    needs: preview
-    runs-on: ubuntu-latest
-    steps:
       - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
@@ -30,6 +26,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             已透過預覽管道部屬
-            ${{ step.preview.outputs.details_url }}
+            ${{ steps.preview.outputs.details_url }}
             
 #'pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}.web.app'
