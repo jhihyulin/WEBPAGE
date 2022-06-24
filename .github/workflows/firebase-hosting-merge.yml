@@ -15,7 +15,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: git hash
-        id: git version
+        id: git_version
         shell: bash
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -35,6 +35,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             已透過正式管道部屬
-            Branch: ${{ steps.vars.outputs.branch }}
-            Sha: ${{ steps.vars.outputs.sha_short }}
+            Branch: ${{ steps.git_version.outputs.branch }}
+            Sha: ${{ steps.git_version.outputs.sha_short }}
             https://jhihyulin.live
