@@ -100,7 +100,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       })
   } else {
     console.log("未登入");
-    swal("未登入", "登入後即可管理留言", "info");
+    //swal("未登入", "登入後即可管理留言", "info");
     document.getElementById("login-state").innerHTML = "未登入";
     document.getElementById("firebase-ui-case").style.display = "";
     document.getElementById("logout-case").style.display = "none";

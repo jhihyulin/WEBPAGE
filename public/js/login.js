@@ -269,7 +269,7 @@ function send_mail_verification() {
         });
 }
 
-function forget_password() {
+function forgot_password() {
     // html 要有一個 <input id="forgot" type="email"> 讓使用者 email
     // 執行發件
     const emailAddress = document.getElementById('forgot').value;
