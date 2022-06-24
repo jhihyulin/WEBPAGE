@@ -11,8 +11,10 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - id: preview
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: deploy to firebase
+        id: deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -26,6 +28,5 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             已透過預覽管道部屬
-            預覽連結:${{ steps.preview.outputs.details_url }}
-            到期時間:${{ steps.preview.outputs.expire_time }}
-            ${{ steps.preview.outputs.urls }}
+            預覽連結:${{ steps.deploy.outputs.details_url }}
+            到期時間:${{ steps.deploy.outputs.expire_time }}
