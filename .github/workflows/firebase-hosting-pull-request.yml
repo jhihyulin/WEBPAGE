@@ -3,7 +3,9 @@
 
 name: Deploy to Firebase Hosting on PR
 on:
-  pull_request: ~
+  pull_request:
+    branches-ignore:    
+      - 'README.md'
   workflow_dispatch: ~
 jobs:
   build_and_preview:
