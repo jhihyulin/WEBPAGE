@@ -20,6 +20,7 @@ jobs:
           channelId: 'pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}'
           projectId: webpage-349c7
   telegram:
+    needs: preview
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message
