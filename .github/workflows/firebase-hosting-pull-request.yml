@@ -29,4 +29,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             已透過預覽管道部屬
-            'pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}'
+            ${{ step.preview.outputs.details_url }}
+            
+#'pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}.web.app'
