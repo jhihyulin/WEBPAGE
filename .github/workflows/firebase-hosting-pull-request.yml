@@ -30,4 +30,5 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             已透過預覽管道部屬
-            ${{ steps.preview.outputs.details_url }}
+            預覽連結:${{ steps.preview.outputs.details_url }}
+            到期時間:${{ steps.preview.outputs.expire_time }}
