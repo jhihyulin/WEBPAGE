@@ -29,4 +29,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             已透過預覽管道部屬
-            ${ output.details_url }
+            '${{ output.details_url }}'
