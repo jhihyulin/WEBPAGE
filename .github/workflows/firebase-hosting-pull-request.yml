@@ -11,6 +11,7 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
+      - id: preview
       - uses: actions/checkout@v2
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
