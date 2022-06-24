@@ -11,8 +11,8 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - id: preview
       - uses: actions/checkout@v2
+      - id: preview
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
