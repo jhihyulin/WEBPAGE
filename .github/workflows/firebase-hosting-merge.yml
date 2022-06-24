@@ -12,10 +12,22 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: deploy to firebase
+        id: deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBPAGE_349C7 }}'
           channelId: live
           projectId: webpage-349c7
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            已透過正式管道部屬
+            預覽連結:${{ steps.deploy.outputs.details_url }}
+            到期時間:${{ steps.deploy.outputs.expire_time }}
