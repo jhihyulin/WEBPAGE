@@ -27,8 +27,8 @@ html {
 body {
     padding: 100px 0;
     background-color: #D2D2D2;
-    border-top: solid 20px #00BFFF;
-    border-bottom: solid 20px #00BFFF;
+    border-top: solid 20px #e33e5a;
+    border-bottom: solid 20px #e33e5a;
     box-sizing: border-box;
 }
 
@@ -38,7 +38,7 @@ body {
     margin: 100px auto;
     position: relative;
     overflow: hidden;
-    background-color: #042F40;
+    background-color: #1a1b2f;
     border-radius: 10px;
     border: solid 1px rgaa(0, 0, 0, 0.15);
     box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
