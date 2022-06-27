@@ -12,12 +12,15 @@ function firebase_ui_web() {
       firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       firebase.auth.TwitterAuthProvider.PROVIDER_ID,
       firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      'yahoo.com',
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
       {
         provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
         defaultCountry: 'TW'
       },
-      firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+      firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+      //'apple.com',
+      //'microsoft.com',
     ],
     // tosUrl and privacyPolicyUrl accept either url string or a callback
     // function.
@@ -73,13 +76,13 @@ firebase.auth().onAuthStateChanged(function (user) {
         }
       }
     }
-    
-    if (photoURL!=null) {
+
+    if (photoURL != null) {
       display_photoURL = photoURL;
     } else {
       display_photoURL = "images/user-regular.jpg";
     }
-    
+
     document.getElementById("login-name").value = display;
     document.getElementById("login-name-case").style.display = "";
     document.getElementById("login-button-case").style.display = "none";
