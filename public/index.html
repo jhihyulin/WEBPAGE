@@ -1,56 +1,179 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!--
+	@jhihyulin
+Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3.0/tw/legalcode)
+-->
+<!DOCTYPE HTML>
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <title>jhihyulin</title>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <!--google font-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<title>jhihyulin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/index.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<!--google font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<!--end-->
+	<!--firebase/firebaseui-web-->
+	<script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth__zh_tw.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+	<!--end-->
+	<!--firebase-->
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+	<script src="js/firebase.js"></script>
+	<!--end-->
+
+	<noscript>
+		<link rel="stylesheet" href="css/noscript.css" />
+	</noscript>
 </head>
 
-<body>
-  <noscript>
-    使用本網站必須啟用JavaScript，否則所有功能無法使用。
-    <a href="https://www.enable-javascript.com/">如何在您的瀏覽器中啟用JavaScript</a>
-  </noscript>
-  <div class="mark">jhihyu</div>
-  <div class="container">
-    <h2>林致宇<span>jhihyulin</span></h2>
-    <h5>CHSHS</h5>
-    <hr>
-    <p><span class="material-icons md-light md-18">room</span>Taiwan,NewTaipeiCity</p>
-    <p><span class="material-icons md-light md-18">code</span>Python,C,C++</p>
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-  </div>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
-  <script src="js/firebase.js "></script>
-  <!--https://darkmodejs.learn.uno/-->
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-  <script src="js/darkmode.js"></script>
-</body>
+<body class="is-preload">
 
-<footer>
-  <div>
-    <img id="build_with_firebase"
-      src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg ">
-  </div>
-  <a href="terms_of_service.html">服務條款</a>
-  <a href="privacy_policy.html">隱私權條款</a>
-  <a href="information_security_policy.html">資訊安全政策</a>
-  <p>jhihyulin©2022</p>
-</footer>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<!--span class="icon fa-gem"></span-->
+				<image id="logo_image" src="https://lh3.googleusercontent.com/a-/AOh14GiYtDPKDncw4-XRPmJuVZrJLpHJj2YHLrFoK7cLa-g=s0?imgmax=0" /></image>
+			</div>
+			<div class="content">
+				<div class="inner">
+					<h1>JHIH YU LIN</h1>
+					<p>Taiwan, NewTaipeiCity</p>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#intro">Intro</a></li>
+					<!--<li><a href="#work">Work</a></li>-->
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Intro -->
+			<article id="intro">
+				<h2 class="major">Intro</h2>
+				<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+				<p>EMPTY</p>
+			</article>
+
+			<!-- Work -->
+			<!--
+			<article id="work">
+				<h2 class="major">Work</h2>
+				<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+				<p>EMPTY</p>
+			</article>
+			-->
+
+			<!-- About -->
+			<article id="about">
+				<h2 class="major">About</h2>
+				<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+				<p>EMPTY</p>
+			</article>
+
+			<!-- Contact -->
+			<article id="contact">
+				<h2 class="major">Contact</h2>
+				<form method="post" action="#">
+					<ul class="actions">
+						<li id="avatar-case" display="none"><img id="avatar" /></li>
+						<li id="login-name-case" display="none"><input type="button" id="login-name" value="NAME"
+								readonly /></li>
+						<li id="login-button-case" display="none"><input type="button" id="login-button"
+								onclick="location.href='#login'" value="Login" /></li>
+						<li id="logout-button-case" display="none"><input type="button" id="logout-button"
+								value="Logout" /></li>
+					</ul>
+					<div class="fields">
+
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="4"></textarea>
+						</div>
+					</div>
+					<ul class="actions">
+						<li><input type="button" id="send-message-button" value="Send Message" class="primary" /></li>
+						<li><input type="reset" value="Reset" /></li>
+					</ul>
+				</form>
+				<ul class="icons">
+					<li><a href="https://twitter.com/jhih_yu_lin" class="icon brands fa-twitter"><span
+								class="label">Twitter</span></a></li>
+					<li><a href="https://www.instagram.com/jhih_yu_lin" class="icon brands fa-instagram"><span
+								class="label">Instagram</span></a></li>
+					<li><a href="https://www.facebook.com/jhihyu0414" class="icon brands fa-facebook-f"><span
+								class="label">Facebook</span></a></li>
+					<li><a href="https://api.whatsapp.com/send?phone=886936327347" class="icon brands fa-whatsapp"><span
+								class="label">Whatsapp</span></a></li>
+					<li><a href="https://discordapp.com/users/561051528065187862"
+							class="icon brands fa-brands fa-discord"><span class="label">Discord</span></a></li>
+					<li><a href="https://t.me/jhih_yu_lin" class="icon brands fa-telegram-plane"><span
+								class="label">Telegram</span></a></li>
+					<li><a href="https://github.com/jhihyulin" class="icon brands fa-github"><span
+								class="label">GitHub</span></a></li>
+					<li><a href="mailto: thomas.JY.Lin@gmail.com" class="icon far fa-envelope"><span
+								class="label">email</span></a></li>
+					<li><a href="tel: +886936327347" class="icon solid fa-phone"><span class="label">Phone</span></a>
+					</li>
+				</ul>
+			</article>
+
+			<!-- login -->
+			<article id="login">
+				<h2 class="major">Login</h2>
+				<div id="firebase-ui-case">
+					<div id="firebaseui-auth-container"></div>
+				</div>
+			</article>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<a class="terms-and-policy" href="terms_of_service.html">服務條款</a>
+			<a class="terms-and-policy" href="privacy_policy.html">隱私權條款</a>
+			<a class="terms-and-policy" href="information_security_policy.html">資訊安全政策</a>
+			<p class="copyright">jhihyulin&copy;2022</p>
+		</footer>
+
+	</div>
+
+	<!-- BG -->
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="js/browser.min.js"></script>
+	<script src="js/breakpoints.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/contact.js"></script>
+
+</body>
 
 </html>
