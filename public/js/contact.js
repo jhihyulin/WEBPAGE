@@ -4,7 +4,12 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 */
 
 function firebase_ui_web() {
+  // Temp variable to hold the anonymous user data if needed.
+  var data = null;
+  // Hold a reference to the anonymous current user.
+  var anonymousUser = firebase.auth().currentUser;
   var uiConfig = {
+    autoUpgradeAnonymousUsers: true,
     signInSuccessUrl: 'index.html#contact', //登入後導向哪裡
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
@@ -18,10 +23,28 @@ function firebase_ui_web() {
         provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
         defaultCountry: 'TW'
       },
-      firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+      //firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
       //'apple.com',
       //'microsoft.com',
     ],
+    callbacks: {
+      // signInFailure callback must be provided to handle merge conflicts which
+      // occur when an existing credential is linked to an anonymous user.
+      signInFailure: function (error) {
+        // For merge conflicts, the error.code will be
+        // 'firebaseui/anonymous-upgrade-merge-conflict'.
+        if (error.code != 'firebaseui/anonymous-upgrade-merge-conflict') {
+          return Promise.resolve();
+        }
+        // The credential the user tried to sign in with.
+        var cred = error.credential;
+        // Copy data from anonymous user to permanent user and delete anonymous
+        // user.
+        // ...
+        // Finish sign-in after data is copied.
+        return firebase.auth().signInWithCredential(cred);
+      }
+    },
     // tosUrl and privacyPolicyUrl accept either url string or a callback
     // function.
     // Terms of service url/callback.
@@ -47,7 +70,7 @@ function logout() {
       window.location.reload();
     }).catch(function (error) {
       //swal("登出錯誤", error.message, "error");
-      toastr.error( error.message, "登出錯誤" );
+      toastr.error(error.message, "登出錯誤");
       console.log("登出錯誤");
       console.log(error.message)
     });
@@ -135,7 +158,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       console.log("電子郵件已驗證");
       //document.getElementById("send_mail_verification").type = "hidden";
     } else if (user.emailVerified == false && user.email != null) {
-      toastr.waring( "請前往信箱點擊連結進行認證", "電子郵件未驗證" )
+      toastr.waring("請前往信箱點擊連結進行認證", "電子郵件未驗證")
       //swal("電子郵件未驗證", "請前往信箱點擊連結進行認證", "warning");
       console.log("電子郵件未驗證");
       //document.getElementById("send_mail_verification").type = "button";
@@ -298,13 +321,13 @@ function write_database(message) {
     }).then(() => {
       console.log('send data successful');
       console.log(timestamp);
-      toastr.success( timeString, "傳送成功" );
+      toastr.success(timeString, "傳送成功");
       //swal("send success", timeString, "success");
       document.getElementById('send-message-button').value = "send message";
       document.getElementById('send-message-button').disabled = false;
     });
   } catch (error) {
-    toastr.error( error, "傳送失敗" );
+    toastr.error(error, "傳送失敗");
     //swal("Error", "", "error");
     console.log(error);
     document.getElementById('send-message-button').value = "send message";
