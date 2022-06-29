@@ -24,7 +24,7 @@ footer {
     text-align: center;
 }
 
-#build_with_firebase{
+#build_with_firebase {
     height:82px;
     width:184px;
 }
@@ -37,3 +37,56 @@ hr {
 a {
   text-decoration: none;
 }
+
+@-ms-viewport {
+	width: device-width;
+}
+
+p,
+a,
+ui li {
+	font-size: 16px;
+}
+/*
+@media screen and (max-width: 1680px) {
+
+	html,
+	p,
+	a,
+	li {
+		font-size: 12pt;
+	}
+
+}
+
+@media screen and (max-width: 736px) {
+
+	html,
+	p,
+	a,
+	li {
+		font-size: 11pt;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	html,
+	body {
+		min-width: 320px;
+	}
+
+}
+
+@media screen and (max-width: 360px) {
+
+	html,
+	p,
+	a,
+	li {
+		font-size: 10pt;
+	}
+
+}
+*/
