@@ -41,11 +41,13 @@ function logout() {
   firebase.auth().signOut()
     .then(function () {
       //swal("登出成功", "", "success");
+      //toastr.success( "登出成功" );
       console.log("登出成功");
       // 登出後強制重整一次頁面
       window.location.reload();
     }).catch(function (error) {
-      swal("登出錯誤", error.message, "error");
+      //swal("登出錯誤", error.message, "error");
+      toastr.error( error.message, "登出錯誤" );
       console.log("登出錯誤");
       console.log(error.message)
     });
@@ -56,6 +58,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser) {
     console.log("已登入");
     //swal("已登入", "本網站尚未完成\n如有錯誤請通知作者", "info");
+    //toastr.info( "本網站尚未完成\n如有錯誤請通知作者", "已登入" );
     var displayName = user.displayName;
     var email = user.email;
     var emailVerified = user.emailVerified;
@@ -132,7 +135,8 @@ firebase.auth().onAuthStateChanged(function (user) {
       console.log("電子郵件已驗證");
       //document.getElementById("send_mail_verification").type = "hidden";
     } else if (user.emailVerified == false && user.email != null) {
-      swal("電子郵件未驗證", "請前往信箱點擊連結進行認證", "warning");
+      toastr.waring( "請前往信箱點擊連結進行認證", "電子郵件未驗證" )
+      //swal("電子郵件未驗證", "請前往信箱點擊連結進行認證", "warning");
       console.log("電子郵件未驗證");
       //document.getElementById("send_mail_verification").type = "button";
     } else if (user.email == null) {
@@ -294,12 +298,14 @@ function write_database(message) {
     }).then(() => {
       console.log('send data successful');
       console.log(timestamp);
-      swal("send success", timeString, "success");
+      toastr.success( timeString, "傳送成功" );
+      //swal("send success", timeString, "success");
       document.getElementById('send-message-button').value = "send message";
       document.getElementById('send-message-button').disabled = false;
     });
   } catch (error) {
-    swal("Error", "", "error");
+    toastr.error( error, "傳送失敗" );
+    //swal("Error", "", "error");
     console.log(error);
     document.getElementById('send-message-button').value = "send message";
     document.getElementById('send-message-button').disabled = false;
@@ -309,4 +315,23 @@ function write_database(message) {
 window.onload = function () {
   firebase_ui_web();
   //document.getElementById("firestore_data_loading").style.display = "none";
+}
+
+toastr.options = {
+  // 參數設定
+  "closeButton": false, // 顯示關閉按鈕
+  "debug": false, // 除錯
+  "newestOnTop": false,  // 最新一筆顯示在最上面
+  "progressBar": true, // 顯示隱藏時間進度條
+  "positionClass": "toast-bottom-right", // 位置的類別
+  "preventDuplicates": false, // 隱藏重覆訊息
+  "onclick": null, // 當點選提示訊息時，則執行此函式
+  "showDuration": "300", // 顯示時間(單位: 毫秒)
+  "hideDuration": "1000", // 隱藏時間(單位: 毫秒)
+  "timeOut": "5000", // 當超過此設定時間時，則隱藏提示訊息(單位: 毫秒)
+  "extendedTimeOut": "1000", // 當使用者觸碰到提示訊息時，離開後超過此設定時間則隱藏提示訊息(單位: 毫秒)
+  "showEasing": "swing", // 顯示動畫時間曲線
+  "hideEasing": "linear", // 隱藏動畫時間曲線
+  "showMethod": "fadeIn", // 顯示動畫效果
+  "hideMethod": "fadeOut" // 隱藏動畫效果
 }
