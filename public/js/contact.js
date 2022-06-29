@@ -317,6 +317,7 @@ window.onload = function () {
   //document.getElementById("firestore_data_loading").style.display = "none";
 }
 
+//toastr
 toastr.options = {
   // 參數設定
   "closeButton": false, // 顯示關閉按鈕
