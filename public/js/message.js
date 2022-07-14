@@ -222,8 +222,20 @@ function check_info() {
       console.log("test--3");
       document.getElementById('send').value = "傳送中...";
       document.getElementById('send').disabled = true
+      sned_messsage(message);
       write_database(message);
       console.log("test--4");
+    }
+  });
+}
+
+function sned_messsage(message) {
+  $.ajax({
+    url: 'https://script.google.com/macros/s/AKfycbyssrqnoDBKjw2KrILRYkhuR_Wd2fYjqUVq0y_W5JvAYiBLtTtt26KWrKn__YSkE3x5SA/exec',
+    method:"post",
+    data: {message: message},
+    success: function (data) {
+      console.log("通知success");
     }
   });
 }
