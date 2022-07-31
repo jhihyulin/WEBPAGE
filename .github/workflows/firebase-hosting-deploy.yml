@@ -5,9 +5,8 @@ name: Deploy to Firebase Hosting on merge
 on:
   workflow_dispatch: ~
   push:
-    paths:
-      - 'public/**'
-      - '**.json'
+    branches:
+      - deploy
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
