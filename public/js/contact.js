@@ -289,8 +289,8 @@ function check_info() {
 function sned_messsage(message) {
   $.ajax({
     url: 'https://script.google.com/macros/s/AKfycbyssrqnoDBKjw2KrILRYkhuR_Wd2fYjqUVq0y_W5JvAYiBLtTtt26KWrKn__YSkE3x5SA/exec',
-    method:"post",
-    data: {message: message},
+    method: "post",
+    data: { message: message },
     success: function (data) {
       console.log("通知success");
     }

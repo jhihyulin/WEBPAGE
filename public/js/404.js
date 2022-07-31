@@ -21,8 +21,8 @@ function checkTime(i) {
 }
 
 var go_index_listner = document.getElementById("container");
-if(go_index_listner) {
+if (go_index_listner) {
     go_index_listner.addEventListener('click', function go_index() {
-        window.location.href='index.html';
+        window.location.href = 'index.html';
     }, false)
 }

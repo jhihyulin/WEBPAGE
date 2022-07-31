@@ -2,22 +2,22 @@ footer {
     text-align: center;
 }
 
-html{
+html {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-family: 'Noto Sans TC','Roboto', Arial, sans-serif;
+    font-family: 'Noto Sans TC', 'Roboto', Arial, sans-serif;
 }
 
-#build_with_firebase{
-    height:82px;
-    width:184px;
+#build_with_firebase {
+    height: 82px;
+    width: 184px;
 }
 
-#delete_account_check{
+#delete_account_check {
     background-color: #ff0000;
     color: #ffffff
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }

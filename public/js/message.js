@@ -19,7 +19,7 @@ function firebase_ui_web() {
     // Terms of service url/callback.
     tosUrl: 'information_security_policy.html',
     // Privacy policy url/callback.
-    privacyPolicyUrl: function() {
+    privacyPolicyUrl: function () {
       window.location.assign('privacy_policy.html');
     }
   };
@@ -31,19 +31,19 @@ function firebase_ui_web() {
 
 function logout() {
   firebase.auth().signOut()
-    .then(function() {
+    .then(function () {
       swal("登出成功", "", "success");
       console.log("登出成功");
       // 登出後強制重整一次頁面
       window.location.reload();
-    }).catch(function(error) {
+    }).catch(function (error) {
       swal("登出錯誤", error.message, "error");
       console.log("登出錯誤");
       console.log(error.message)
     });
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   console.log("登入狀態改變");
   if (firebase.auth().currentUser) {
     console.log("已登入");
@@ -76,15 +76,15 @@ firebase.auth().onAuthStateChanged(function(user) {
     var ref = db.collection("user").doc(uid);
     console.log("try update user");
     ref.update({
-        uid: uid,
-        displayName: displayName,
-        emailVerified: emailVerified,
-        email: email,
-        photoURL: photoURL,
-        phoneNumber: phoneNumber
-      }).then(() => {
-        console.log('update user data successful');
-      })
+      uid: uid,
+      displayName: displayName,
+      emailVerified: emailVerified,
+      email: email,
+      photoURL: photoURL,
+      phoneNumber: phoneNumber
+    }).then(() => {
+      console.log('update user data successful');
+    })
       .catch(error => {
         console.log("try set user");
         ref.set({
@@ -123,13 +123,13 @@ firebase.auth().onAuthStateChanged(function(user) {
   try {
     var db = firebase.firestore();
     db.collection("user").doc(uid).onSnapshot(doc => {
-        console.log(doc.data());
-        if (doc.data().role == "admin") {
-          document.getElementById("admin_case").style.display = "";
-        } else {
-          document.getElementById("admin_case").style.display = "none";
-        }
-      })
+      console.log(doc.data());
+      if (doc.data().role == "admin") {
+        document.getElementById("admin_case").style.display = "";
+      } else {
+        document.getElementById("admin_case").style.display = "none";
+      }
+    })
       .catch(error => {
         document.getElementById("admin_case").style.display = "none";
       });
@@ -179,7 +179,7 @@ function get_data() {
 }
 
 var get_data_listner = document.getElementById("firestore_get_data");
-get_data_listner.addEventListener("click", function() {
+get_data_listner.addEventListener("click", function () {
   get_data();
 }, false)
 
@@ -194,7 +194,7 @@ send_listner.addEventListener('click', function send() {
 }, false)
 
 var logout_listner = document.getElementById("logout");
-logout_listner.addEventListener('click', function() {
+logout_listner.addEventListener('click', function () {
   console.log("logout start");
   logout();
 }, false)
@@ -232,8 +232,8 @@ function check_info() {
 function sned_messsage(message) {
   $.ajax({
     url: 'https://script.google.com/macros/s/AKfycbyssrqnoDBKjw2KrILRYkhuR_Wd2fYjqUVq0y_W5JvAYiBLtTtt26KWrKn__YSkE3x5SA/exec',
-    method:"post",
-    data: {message: message},
+    method: "post",
+    data: { message: message },
     success: function (data) {
       console.log("通知success");
     }
@@ -288,7 +288,7 @@ function write_database(message) {
   }
 }
 
-window.onload = function() {
+window.onload = function () {
   firebase_ui_web();
   document.getElementById("firestore_data_loading").style.display = "none";
 }

@@ -10,8 +10,8 @@ const firebaseConfig = {
 };
 
 try {
-    firebase.initializeApp(firebaseConfig);
-    var perf = firebase.performance();
+  firebase.initializeApp(firebaseConfig);
+  var perf = firebase.performance();
 } catch (e) {
-    console.log(e);
+  console.log(e);
 }
