@@ -88,7 +88,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     var photoURL = user.photoURL;
     var uid = user.uid;
     var phoneNumber = user.phoneNumber;
-    var providerData = user.providerData
+    var providerData = user.providerData;
     if (displayName != null) {
       var display = displayName;
     } else {
@@ -137,7 +137,8 @@ firebase.auth().onAuthStateChanged(function (user) {
           emailVerified: emailVerified,
           email: email,
           photoURL: photoURL,
-          phoneNumber: phoneNumber
+          phoneNumber: phoneNumber,
+          role: "user"
         }).then(() => {
           console.log('set user data successful');
         });
