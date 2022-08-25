@@ -109,13 +109,12 @@ firebase.auth().onAuthStateChanged(function (user) {
       display_photoURL = "images/user-regular.jpg";
     }
 
-    document.getElementById("login-name").value = display;
-    document.getElementById("login-name-case").style.display = "";
-    document.getElementById("login-button-case").style.display = "none";
-    document.getElementById("logout-button-case").style.display = "";
-    document.getElementById("avatar-case").style.display = "";
-    document.getElementById("avatar").src = display_photoURL;
-    //document.getElementById("firestore_data_loading").style.display = "none";
+    document.querySelectorAll(".login-name").forEach(a=>a.value = display);
+    document.querySelectorAll(".login-name-case").forEach(a=>a.style.display = "initial");
+    document.querySelectorAll(".login-button-case").forEach(a=>a.style.display = "none");
+    document.querySelectorAll(".logout-button-case").forEach(a=>a.style.display = "initial");
+    document.querySelectorAll(".avatar-case").forEach(a=>a.style.display = "initial");
+    document.querySelectorAll(".avatar").forEach(a=>a.src = display_photoURL);
     var db = firebase.firestore();
     var ref = db.collection("user").doc(uid);
     console.log("try update user");
@@ -146,10 +145,10 @@ firebase.auth().onAuthStateChanged(function (user) {
   } else {
     console.log("未登入");
     //swal("未登入", "登入後即可管理留言", "info");
-    document.getElementById("login-name-case").style.display = "none";
-    document.getElementById("login-name").value = "not logged in";
-    document.getElementById("logout-button-case").style.display = "none";
-    document.getElementById("avatar-case").style.display = "none";
+    document.getElementsByClassName("login-name-case").style.display = "none";
+    document.getElementsByClassName("login-name").value = "not logged in";
+    document.getElementsByClassName("logout-button-case").style.display = "none";
+    document.getElementsByClassName("avatar-case").style.display = "none";
     //document.getElementById("firebase-ui-case").style.display = "";
     //document.getElementById("logout-button").style.display = "none";
     //document.getElementById("firestore_data_loading").style.display = "none";
@@ -169,6 +168,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   } catch (error) {
     console.log(error);
   }
+  get_server_list(user.uid)
   /*
   try {
     var db = firebase.firestore();
@@ -246,11 +246,11 @@ send_listner.addEventListener('click', function send() {
   check_info();
 }, false)
 
-var logout_listner = document.getElementById("logout-button");
-logout_listner.addEventListener('click', function () {
+var logout_listner = document.querySelectorAll('.logout-button');
+logout_listner.forEach(el => el.addEventListener('click', event => {
   console.log("logout start");
   logout();
-}, false)
+}));
 
 function check_info() {
   console.log("test--1");

@@ -47,7 +47,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 				<ul>
 					<li><a href="#intro">Intro</a></li>
 					<!--<li><a href="#work">Work</a></li>-->
-					<li><a href="#about">About</a></li>
+					<li><a href="#VPN">VPN</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -72,11 +72,30 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 			</article>
 			-->
 
-			<!-- About -->
-			<article id="about">
-				<h2 class="major">About</h2>
-				<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-				<p>EMPTY</p>
+			<!-- VPN -->
+			<article id="VPN">
+				<h2 class="major">VPN</h2>
+				<form method="post" action="#">
+					<ul class="actions">
+						<li class="avatar-case" display="none"><img class="avatar" /></li>
+						<li class="login-name-case" display="none"><input type="button" class="login-name" value="NAME"
+								readonly /></li>
+						<li class="login-button-case" display="none"><input type="button" class="login-button"
+								onclick="location.href='#login'" value="Login" /></li>
+						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
+								value="Logout" /></li>
+						<li><input type="button" id="Reload-server-list-button" value="Reload" class="primary" /></li>
+					</ul>
+					<div class="fields">
+						<div class="field">
+							<label for="server-list">Server List</label>
+							<select id="server-list-option" name="server-list">
+								<option value="">Select Server</option>
+							</select>
+							<input type="text" id="access_url" value="" display="none" readonly="readonly"/>
+						</div>
+					</div>
+				</form>
 			</article>
 
 			<!-- Contact -->
@@ -84,16 +103,15 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 				<h2 class="major">Contact</h2>
 				<form method="post" action="#">
 					<ul class="actions">
-						<li id="avatar-case" display="none"><img id="avatar" /></li>
-						<li id="login-name-case" display="none"><input type="button" id="login-name" value="NAME"
+						<li class="avatar-case" display="none"><img class="avatar" /></li>
+						<li class="login-name-case" display="none"><input type="button" class="login-name" value="NAME"
 								readonly /></li>
-						<li id="login-button-case" display="none"><input type="button" id="login-button"
+						<li class="login-button-case" display="none"><input type="button" class="login-button"
 								onclick="location.href='#login'" value="Login" /></li>
-						<li id="logout-button-case" display="none"><input type="button" id="logout-button"
+						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
 								value="Logout" /></li>
 					</ul>
 					<div class="fields">
-
 						<div class="field">
 							<label for="message">Message</label>
 							<textarea name="message" id="message" rows="4"></textarea>
@@ -175,6 +193,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 	<script src="js/util.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/contact.js"></script>
+	<script src="js/VPN.js"></script>
 
 </body>
 
