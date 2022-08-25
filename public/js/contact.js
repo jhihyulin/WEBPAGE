@@ -117,6 +117,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.querySelectorAll(".avatar").forEach(a=>a.src = display_photoURL);
     document.getElementById("access-url").style.display = "none";
     document.getElementById("access-url-copy-button").style.display = "none";
+    document.getElementById("access-url-go-to-app-button").style.display = "none";
     var db = firebase.firestore();
     var ref = db.collection("user").doc(uid);
     console.log("try update user");

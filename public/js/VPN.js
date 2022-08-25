@@ -14,8 +14,13 @@ function get_access_url(server_id, uid) {
         success: function (data) {
             console.log(data);
             document.getElementById("access-url").value = data.access_url;
+            document.getElementById("access-url-go-to-app-button").style.display = "initial";
             document.getElementById("access-url").style.display = "initial";
             document.getElementById("access-url-copy-button").style.display = "initial";
+            var go_to_outlie_app_listener = document.getElementById("access-url-go-to-app-button");
+            go_to_outlie_app_listener.addEventListener("click", (event) => {
+                window.open(data.access_url, "_blank");
+            });
             var copy_listner = document.getElementById("access-url-copy-button");
             copy_listner.addEventListener('click', () => {
                 navigator.clipboard.writeText(data.access_url)
