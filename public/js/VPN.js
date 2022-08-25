@@ -24,11 +24,11 @@ function get_access_url(server_id, uid) {
             var copy_listner = document.getElementById("access-url-copy-button");
             copy_listner.addEventListener('click', () => {
                 navigator.clipboard.writeText(data.access_url)
-                .then(() => {
-                    toastr.success("Copied to clipboard");
-                });
-        })
-}
+                    .then(() => {
+                        toastr.success("Copied to clipboard");
+                    });
+            })
+        }
     })
 }
 

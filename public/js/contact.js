@@ -10,7 +10,7 @@ function firebase_ui_web() {
   var anonymousUser = firebase.auth().currentUser;
   var uiConfig = {
     autoUpgradeAnonymousUsers: true,
-    signInSuccessUrl: 'index.html#contact', //登入後導向哪裡
+    signInSuccessUrl: 'index.html', //登入後導向哪裡
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -109,12 +109,12 @@ firebase.auth().onAuthStateChanged(function (user) {
       display_photoURL = "images/user-regular.jpg";
     }
 
-    document.querySelectorAll(".login-name").forEach(a=>a.value = display);
-    document.querySelectorAll(".login-name-case").forEach(a=>a.style.display = "initial");
-    document.querySelectorAll(".login-button-case").forEach(a=>a.style.display = "none");
-    document.querySelectorAll(".logout-button-case").forEach(a=>a.style.display = "initial");
-    document.querySelectorAll(".avatar-case").forEach(a=>a.style.display = "initial");
-    document.querySelectorAll(".avatar").forEach(a=>a.src = display_photoURL);
+    document.querySelectorAll(".login-name").forEach(a => a.value = display);
+    document.querySelectorAll(".login-name-case").forEach(a => a.style.display = "initial");
+    document.querySelectorAll(".login-button-case").forEach(a => a.style.display = "none");
+    document.querySelectorAll(".logout-button-case").forEach(a => a.style.display = "initial");
+    document.querySelectorAll(".avatar-case").forEach(a => a.style.display = "initial");
+    document.querySelectorAll(".avatar").forEach(a => a.src = display_photoURL);
     document.getElementById("access-url").style.display = "none";
     document.getElementById("access-url-copy-button").style.display = "none";
     document.getElementById("access-url-go-to-app-button").style.display = "none";
@@ -149,10 +149,11 @@ firebase.auth().onAuthStateChanged(function (user) {
     console.log("未登入");
     //swal("未登入", "登入後即可管理留言", "info");
 
-    document.querySelectorAll(".login-name").forEach(a=>a.value = "not logged in");
-    document.querySelectorAll(".login-name-case").forEach(a=>a.style.display = "none");
-    document.querySelectorAll(".logout-button-case").forEach(a=>a.style.display = "none");
-    document.querySelectorAll(".avatar-case").forEach(a=>a.style.display = "none");
+    document.querySelectorAll(".login-name").forEach(a => a.value = "not logged in");
+    document.querySelectorAll(".login-name-case").forEach(a => a.style.display = "none");
+    document.querySelectorAll(".logout-button-case").forEach(a => a.style.display = "none");
+    document.querySelectorAll(".avatar-case").forEach(a => a.style.display = "none");
+    document.getElementById("vpn-fields").style.display = "none";
   }
   try {
     if (user.emailVerified == true && user.email != null) {

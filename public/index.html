@@ -86,22 +86,29 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
 								value="Logout" /></li>
 					</ul>
-					<div class="fields">
+					<div class="fields" id="vpn-fields">
 						<div class="field">
 							<div id="server-list-label-case-case">
 								<div id="server-list-label-case">
-									<label for="server-list" id="server-list-label">Server List</label>
+									<label for="server-list" id="server-list-label">Server</label>
 								</div>
 								<div id="server-list-button-case">
-									<input type="button" id="Reload-server-list-button" value="Reload" class="primary" />
+									<input type="button" id="Reload-server-list-button" value="Reload"
+										class="primary" />
 								</div>
 							</div>
 							<select id="server-list-option" name="server-list">
 								<option value="">wait to load server list</option>
 							</select>
 							<input type="button" id="access-url" name="server-list">
-							<input type="button" id="access-url-copy-button" name="server-list" value="copy"/>
-							<input type="button" id="access-url-go-to-app-button" value="go app"/>
+							<div>
+								<div id="access-url-copy-button-case">
+									<input type="button" id="access-url-copy-button" name="server-list" value="copy" />
+								</div>
+								<div id="access-url-go-to-app-button-case">
+									<input type="button" id="access-url-go-to-app-button" value="go app" />
+								</div>
+							</div>
 						</div>
 					</div>
 				</form>
