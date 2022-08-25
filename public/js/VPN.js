@@ -33,7 +33,7 @@ function get_server_list(uid) {
         //url: "http://127.0.0.1:8000/server_list",
         method: "get",
         success: function (data) {
-            console.log("¤w¨ú±o¦øªA¾¹¦Cªí");
+            console.log("ï¿½wï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Cï¿½ï¿½");
             console.log(data);
             $("#server-list-option").empty();
             $("#server-list-option").append($("<option/>", {
