@@ -75,6 +75,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 			<!-- VPN -->
 			<article id="VPN">
 				<h2 class="major">VPN</h2>
+				<h3>⚠️in development⚠️</h3>
 				<form method="post" action="#">
 					<ul class="actions">
 						<li class="avatar-case" display="none"><img class="avatar" /></li>
@@ -84,15 +85,22 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 								onclick="location.href='#login'" value="Login" /></li>
 						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
 								value="Logout" /></li>
-						<li><input type="button" id="Reload-server-list-button" value="Reload" class="primary" /></li>
 					</ul>
 					<div class="fields">
 						<div class="field">
-							<label for="server-list">Server List</label>
+							<div id="server-list-label-case-case">
+								<div id="server-list-label-case">
+									<label for="server-list" id="server-list-label">Server List</label>
+								</div>
+								<div id="server-list-button-case">
+									<input type="button" id="Reload-server-list-button" value="Reload" class="primary" />
+								</div>
+							</div>
 							<select id="server-list-option" name="server-list">
-								<option value="">Select Server</option>
+								<option value="">wait to load server list</option>
 							</select>
-							<input type="text" id="access_url" value="" display="none" readonly="readonly"/>
+							<input type="button" id="access-url" name="server-list">
+							<input type="button" id="access-url-copy-button" name="server-list" value="copy"/>
 						</div>
 					</div>
 				</form>

@@ -115,6 +115,8 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.querySelectorAll(".logout-button-case").forEach(a=>a.style.display = "initial");
     document.querySelectorAll(".avatar-case").forEach(a=>a.style.display = "initial");
     document.querySelectorAll(".avatar").forEach(a=>a.src = display_photoURL);
+    document.getElementById("access-url").style.display = "none";
+    document.getElementById("access-url-copy-button").style.display = "none";
     var db = firebase.firestore();
     var ref = db.collection("user").doc(uid);
     console.log("try update user");
@@ -145,13 +147,11 @@ firebase.auth().onAuthStateChanged(function (user) {
   } else {
     console.log("未登入");
     //swal("未登入", "登入後即可管理留言", "info");
-    document.getElementsByClassName("login-name-case").style.display = "none";
-    document.getElementsByClassName("login-name").value = "not logged in";
-    document.getElementsByClassName("logout-button-case").style.display = "none";
-    document.getElementsByClassName("avatar-case").style.display = "none";
-    //document.getElementById("firebase-ui-case").style.display = "";
-    //document.getElementById("logout-button").style.display = "none";
-    //document.getElementById("firestore_data_loading").style.display = "none";
+
+    document.querySelectorAll(".login-name").forEach(a=>a.value = "not logged in");
+    document.querySelectorAll(".login-name-case").forEach(a=>a.style.display = "none");
+    document.querySelectorAll(".logout-button-case").forEach(a=>a.style.display = "none");
+    document.querySelectorAll(".avatar-case").forEach(a=>a.style.display = "none");
   }
   try {
     if (user.emailVerified == true && user.email != null) {
@@ -334,13 +334,13 @@ function write_database(message) {
     }).then(() => {
       console.log('send data successful');
       console.log(timestamp);
-      toastr.success(timeString, "傳送成功");
+      toastr.success(timeString, "Send successful");
       //swal("send success", timeString, "success");
       document.getElementById('send-message-button').value = "send message";
       document.getElementById('send-message-button').disabled = false;
     });
   } catch (error) {
-    toastr.error(error, "傳送失敗");
+    toastr.error(error, "Send failed");
     //swal("Error", "", "error");
     console.log(error);
     document.getElementById('send-message-button').value = "send message";

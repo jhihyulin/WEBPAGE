@@ -1,16 +1,29 @@
-function get_access_url(server_id, uid){
+function get_access_url(server_id, uid) {
+    var data = {
+        "firebase_uid": uid,
+        "server_id": server_id
+    };
+    json_data = JSON.stringify(data)
     $.ajax({
-        url: 'https://webpage-vpn-backend.herokuapp.com/create_key',
-        //url: 'http://127.0.0.1:8000/create_key',
-        method: 'POST',
-        data: {
-            firebase_uid: uid,
-            server_id: server_id
-        },
-        success: function(data){
+        url: "https://webpage-vpn-backend.herokuapp.com/create_key",
+        //url: "http://127.0.0.1:8000/create_key",
+        method: "POST",
+        data: json_data,
+        contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
             console.log(data);
-            $('#access_url').value = data.access_url;
-        }
+            document.getElementById("access-url").value = data.access_url;
+            document.getElementById("access-url").style.display = "initial";
+            document.getElementById("access-url-copy-button").style.display = "initial";
+            var copy_listner = document.getElementById("access-url-copy-button");
+            copy_listner.addEventListener('click', () => {
+                navigator.clipboard.writeText(data.access_url)
+                .then(() => {
+                    toastr.success("Copied to clipboard");
+                });
+        })
+}
     })
 }
 
@@ -22,17 +35,28 @@ function get_server_list(uid) {
         success: function (data) {
             console.log("已取得伺服器列表");
             console.log(data);
+            $("#server-list-option").empty();
+            $("#server-list-option").append($("<option/>", {
+                text: "Please choose a server",
+            }));
             for (var i = 0; i < data.server_amount; i++) {
-                $('#server-list-option').append($("<option/>", {
+                $("#server-list-option").append($("<option/>", {
                     value: data.server_list[i].server_id,
                     text: data.server_list[i].display_name
                 }));
             }
         }
     });
-    var selectElement = document.querySelector('#server-list-option');
-    selectElement.addEventListener('change', (event) => {
-        console.log('select ' + event.target.value);
+    var selectElement = document.querySelector("#server-list-option");
+    selectElement.addEventListener("change", (event) => {
+        console.log("select " + event.target.value);
         get_access_url(event.target.value, uid);
     });
 }
+
+var reload_listner = document.getElementById("Reload-server-list-button");
+reload_listner.addEventListener('click', function send() {
+    var uid = firebase.auth().currentUser.uid
+    get_server_list(uid)
+    toastr.success("Reloaded successfully");
+}, false)
