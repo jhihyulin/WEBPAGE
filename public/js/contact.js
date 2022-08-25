@@ -145,10 +145,11 @@ firebase.auth().onAuthStateChanged(function (user) {
   } else {
     console.log("未登入");
     //swal("未登入", "登入後即可管理留言", "info");
-    document.getElementsByClassName("login-name-case").style.display = "none";
-    document.getElementsByClassName("login-name").value = "not logged in";
-    document.getElementsByClassName("logout-button-case").style.display = "none";
-    document.getElementsByClassName("avatar-case").style.display = "none";
+    
+    document.querySelectorAll(".login-name-case").forEach(a=>a.style.display = "none");
+    document.querySelectorAll(".login-name").forEach(a=>a.value = "not logged in");
+    document.querySelectorAll(".logout-button-case").forEach(a=>a.style.display = "none");
+    document.querySelectorAll(".avatar-case").forEach(a=>a.style.display = "none");
     //document.getElementById("firebase-ui-case").style.display = "";
     //document.getElementById("logout-button").style.display = "none";
     //document.getElementById("firestore_data_loading").style.display = "none";
@@ -168,6 +169,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   } catch (error) {
     console.log(error);
   }
+  user = firebase.auth().currentUser;
   get_server_list(user.uid)
   /*
   try {
