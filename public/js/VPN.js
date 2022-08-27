@@ -5,8 +5,8 @@ function get_access_url(server_id, uid) {
     };
     json_data = JSON.stringify(data)
     $.ajax({
-        url: "https://webpage-vpn-backend.herokuapp.com/create_key",
-        //url: "http://127.0.0.1:8000/create_key",
+        url: "https://webpage-vpn-backend.herokuapp.com/get_key",
+        //url: "http://127.0.0.1:8000/get_key",
         method: "POST",
         data: json_data,
         contentType: "application/json",
