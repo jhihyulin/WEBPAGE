@@ -1747,6 +1747,10 @@ body.is-preload #header .content .inner {
 	border-radius: 50%;
 }
 
+#data-usage-bar{
+	width: 55%
+}
+
 @media screen and (max-width: 736px) {
 
 	#main article {
@@ -1793,7 +1797,16 @@ body.is-preload #header .content .inner {
 		margin: 0.5rem;
 	}
 
+	#data-usage-bar{
+		width: 45%
+	}
 
+}
+
+@media screen and (max-width: 520px) {
+	#data-usage-bar{
+		width: 30%
+	}
 }
 
 /* Footer */
@@ -1844,13 +1857,11 @@ body.is-preload #footer {
 #server-list-label {
 	display: inline;
 	margin-bottom: 0;
+	float: left;
+	margin-top: 0.5rem;
+	margin-bottom: 1.5rem;
 }
 
-#server-list-label-case-case {
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
-	width: auto;
-}
 
 #Reload-server-list-button {
 	display: inline;
@@ -1858,37 +1869,25 @@ body.is-preload #footer {
 	margin-left: 0;
 	margin-top: 0;
 	margin-bottom: 0;
-}
-
-#server-list-button-case {
-	width: 49%;
-	margin-right: 0;
-	padding-right: 0;
-	text-align: right;
-	display: inline-block;
+	float: right;
 }
 
 #server-list-label-case {
-	width: 49%;
-	margin-left: 0;
-	padding-left: 0;
-	text-align: left;
-	display: inline-block;
-}
-
-#server-list-label-case-case {
-	width: 98%;
+	width: 100%;
+	min-height: 2.75rem;
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
 }
 
 #server-list-option {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
-	width: 98%;
+	width: 100%;
 }
 
 #access-url {
-	max-width: 98%;
-	width: 98%;
+	max-width: 100%;
+	width: 100%;
 	margin-bottom: 0.5rem;
 	margin-top: 0.5rem;
 }
@@ -1896,25 +1895,48 @@ body.is-preload #footer {
 #access-url-copy-button {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
+	float: left;
 }
 
 #access-url-go-to-app-button {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
+	float: right;
 }
 
-#access-url-copy-button-case {
-	width: 49%;
-	margin-right: 0;
-	padding-right: 0;
-	text-align: left;
-	display: inline-block;
+#data-usage-bar{
+	height: 2.75rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	border-radius: 4px;
 }
 
-#access-url-go-to-app-button-case {
-	width: 49%;
-	margin-left: 0;
-	padding-left: 0;
-	text-align: right;
-	display: inline-block;
+#panel_1 {
+	text-align: center
 }
+
+progress {
+	background-color: #ffffff;
+    border: 0;
+    height: 2.75rem;
+    border-radius: 4px;
+}
+progress::-webkit-progress-bar {
+    border: 1px;
+    height: 2.75rem;
+    border-radius: 4px;
+}
+progress::-webkit-progress-value {
+	background-color: #ffffff;
+    border: 0;
+    height: 2.75rem;
+    border-radius: 4px;
+}
+progress::-moz-progress-bar {
+    border: 0;
+    height: 2.75rem;
+    border-radius: 4px;
+}
+

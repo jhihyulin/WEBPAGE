@@ -1,15 +1,90 @@
+function AndroidOpenApp(access_url) {
+    var before = new Date().valueOf();
+    setTimeout(function () {
+        var after = new Date().valueOf();
+        if (after - before > 200) { return; }
+        window.location = ('https://play.google.com/store/apps/details?id=org.outline.android.client');
+    }, 50);
+    window.location = (access_url);
+}
+
+function iOSOpenApp(access_url) {
+    var before = new Date().valueOf();
+    setTimeout(function () {
+        var after = new Date().valueOf();
+        if (after - before > 2000) { return; }
+        window.location = ('https://apps.apple.com/us/app/outline-app/id1356177741');
+    }, 1000);
+    window.location = (access_url);
+}
+
+function MacosOpenApp(access_url) {
+    toastr.info("<a href='https://apps.apple.com/us/app/outline-app/id1356178125'>Install</a>", 
+    'App didn\'t open? Please install the app first', 
+    {
+        "timeOut": "10000", 
+        "closeButton": true,
+        "extendedTimeOut": "10000"
+    });
+    window.location = (access_url);
+}
+
+function WindowsAndLinuxOpenApp(access_url) {
+    toastr.info("<a href='https://getoutline.org/zh-TW/get-started/#step-3'>Install</a>", 
+    'App didn\'t open? Please install the app first', 
+    {
+        "timeOut": "10000", 
+        "closeButton": true,
+        "extendedTimeOut": "10000"
+    });
+    window.location = (access_url);
+}
+
+function which_system() {
+    var u = navigator.userAgent;
+    return {
+        // android
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+        // 是否為ios
+        ios: u.indexOf('iPhone') > -1 || u.indexOf('iPad') > -1,
+        // 是否為windows
+        windows: u.indexOf('Windows') > -1,
+        // 是否為linux
+        linux: u.indexOf('linux') > -1 || u.indexOf('ubuntu') > -1,
+        // 是否為mac
+        macos: u.indexOf('Mac')
+    };
+}
+
+function go_to_outlie_app(access_url) {
+    if (which_system().android) {
+        AndroidOpenApp(access_url);
+    } else if (which_system().ios) {
+        iOSOpenApp(access_url);
+    } else if (which_system().windows || which_system().linux) {
+        WindowsAndLinuxOpenApp(access_url);
+    } else if (which_system().macos) {
+        MacosOpenApp(access_url);
+    } else {
+        toastr.warning("Pleasee add the access url by yourself", "Unknown system");
+    }
+}
+
+
 function get_access_url(server_id, uid) {
     if (server_id == "none") {
         document.getElementById("access-url").value = "none";
         document.getElementById("access-url-go-to-app-button").style.display = "none";
         document.getElementById("access-url").style.display = "none";
         document.getElementById("access-url-copy-button").style.display = "none";
+        document.getElementById("data-usage-bar").style.display = "none";
         return;
     }
     document.getElementById("access-url").value = "Loading access url...";
     document.getElementById("access-url").style.display = "initial";
     document.getElementById("access-url-go-to-app-button").style.display = "none";
     document.getElementById("access-url-copy-button").style.display = "none";
+    document.getElementById("data-usage-bar").style.display = "none";
     var data = {
         "firebase_uid": uid,
         "server_id": server_id
@@ -28,14 +103,17 @@ function get_access_url(server_id, uid) {
             document.getElementById("access-url-go-to-app-button").style.display = "initial";
             document.getElementById("access-url").style.display = "initial";
             document.getElementById("access-url-copy-button").style.display = "initial";
-            var go_to_outlie_app_listener = document.getElementById("access-url-go-to-app-button");
+            document.getElementById("data-usage-bar").style.display = "initial";
+            document.getElementById("data-usage-bar").value = data.data_used_percentage;
+            document.getElementById("data-usage-bar").innerHTML = data.data_used_percentage + "%";
             var access_url = data.access_url + "#" + data.display_name
             console.log(access_url);
+            var go_to_outlie_app_listener = document.getElementById("access-url-go-to-app-button");
             go_to_outlie_app_listener.addEventListener("click", function () {
-                window.open(access_url, "_blank");
+                go_to_outlie_app(access_url);
             }, false);
-            
-            var copy_listner = document.getElementById("access-url-copy-button");
+
+            const copy_listner = document.getElementById("access-url-copy-button");
             copy_listner.addEventListener("click", function () {
                 navigator.clipboard.writeText(access_url);
                 toastr.success("Copied to clipboard");
