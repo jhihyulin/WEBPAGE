@@ -1,21 +1,15 @@
 function AndroidOpenApp(access_url) {
-    var before = new Date().valueOf();
-    setTimeout(function () {
-        var after = new Date().valueOf();
-        if (after - before > 200) { return; }
-        window.location = ('https://play.google.com/store/apps/details?id=org.outline.android.client');
-    }, 50);
-    window.location = (access_url);
+    window.location.href = access_url;
+    setTimeout(function() {
+        window.location.href = 'https://play.google.com/store/apps/details?id=org.outline.android.client';
+    }, 1000);
 }
 
 function iOSOpenApp(access_url) {
-    var before = new Date().valueOf();
-    setTimeout(function () {
-        var after = new Date().valueOf();
-        if (after - before > 2000) { return; }
-        window.location = ('https://apps.apple.com/us/app/outline-app/id1356177741');
+    window.location.href = access_url;
+    setTimeout(function() {
+        window.location.href = 'https://apps.apple.com/us/app/outline-app/id1356177741';
     }, 1000);
-    window.location = (access_url);
 }
 
 function MacosOpenApp(access_url) {
@@ -44,7 +38,7 @@ function which_system() {
     var u = navigator.userAgent;
     return {
         // android
-        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+        android: u.indexOf('Android') > -1,
         // 是否為ios
         ios: u.indexOf('iPhone') > -1 || u.indexOf('iPad') > -1,
         // 是否為windows
