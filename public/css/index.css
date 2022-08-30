@@ -1956,3 +1956,7 @@ progress::-moz-progress-bar {
 	height: 2.75rem;
 	border-radius: 4px;
 }
+
+.crypto_address {
+  word-wrap: break-word;
+}

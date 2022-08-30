@@ -39,13 +39,13 @@ function which_system() {
     return {
         // android
         android: u.indexOf('Android') > -1,
-        // ¬O§_¬°ios
+        // ï¿½Oï¿½_ï¿½ï¿½ios
         ios: u.indexOf('iPhone') > -1 || u.indexOf('iPad') > -1,
-        // ¬O§_¬°windows
+        // ï¿½Oï¿½_ï¿½ï¿½windows
         windows: u.indexOf('Windows') > -1,
-        // ¬O§_¬°linux
+        // ï¿½Oï¿½_ï¿½ï¿½linux
         linux: u.indexOf('linux') > -1 || u.indexOf('ubuntu') > -1,
-        // ¬O§_¬°mac
+        // ï¿½Oï¿½_ï¿½ï¿½mac
         macos: u.indexOf('Mac')
     };
 }
