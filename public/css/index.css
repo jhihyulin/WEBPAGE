@@ -1826,7 +1826,8 @@ body.is-preload #header .content .inner {
 	.avatar-case {
 		width: 2.5rem;
 		height: 2.5rem;
-		margin: 0.5rem;
+		margin-right: 0;
+		margin-left: 0;
 	}
 
 }
