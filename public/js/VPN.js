@@ -1,37 +1,44 @@
 function AndroidOpenApp(access_url) {
-    window.location.href = access_url;
-    setTimeout(function() {
-        window.location.href = 'https://play.google.com/store/apps/details?id=org.outline.android.client';
-    }, 1000);
+    var before = new Date().valueOf();
+    setTimeout(function () {
+        var after = new Date().valueOf();
+        if (after - before > 200) { return; }
+        window.location = ('market://details?id=org.outline.android.client');
+    }, 50);
+    window.location = (access_url);
 }
 
 function iOSOpenApp(access_url) {
-    window.location.href = access_url;
-    setTimeout(function() {
-        window.location.href = 'https://apps.apple.com/us/app/outline-app/id1356177741';
-    }, 1000);
+    window.location = (access_url);
+    toastr.info("<a href='https://apps.apple.com/us/app/outline-app/id1356177741'>Install</a>",
+        'App didn\'t open? Please install the app first',
+        {
+            "timeOut": "10000",
+            "closeButton": true,
+            "extendedTimeOut": "10000"
+        });
 }
 
 function MacosOpenApp(access_url) {
-    toastr.info("<a href='https://apps.apple.com/us/app/outline-app/id1356178125'>Install</a>", 
-    'App didn\'t open? Please install the app first', 
-    {
-        "timeOut": "10000", 
-        "closeButton": true,
-        "extendedTimeOut": "10000"
-    });
     window.location = (access_url);
+    toastr.info("<a href='https://apps.apple.com/us/app/outline-app/id1356178125'>Install</a>",
+        'App didn\'t open? Please install the app first',
+        {
+            "timeOut": "10000",
+            "closeButton": true,
+            "extendedTimeOut": "10000"
+        });
 }
 
 function WindowsAndLinuxOpenApp(access_url) {
-    toastr.info("<a href='https://getoutline.org/zh-TW/get-started/#step-3'>Install</a>", 
-    'App didn\'t open? Please install the app first', 
-    {
-        "timeOut": "10000", 
-        "closeButton": true,
-        "extendedTimeOut": "10000"
-    });
     window.location = (access_url);
+    toastr.info("<a href='https://getoutline.org/zh-TW/get-started/#step-3'>Install</a>",
+        'App didn\'t open? Please install the app first',
+        {
+            "timeOut": "10000",
+            "closeButton": true,
+            "extendedTimeOut": "10000"
+        });
 }
 
 function which_system() {

@@ -854,7 +854,7 @@ ol li {
 
 ul {
 	list-style: disc;
-	margin: 0 0 2rem 0;
+	margin: 0;
 	padding-left: 1em;
 }
 
@@ -1340,6 +1340,18 @@ body.is-preload #bg:before {
 	border-radius: 4px;
 }
 
+.avatar{
+	margin: auto;
+}
+
+.avatar-case{
+	margin: auto 1.5rem;
+}
+
+#contact-field{
+	margin-top: 1.5rem;
+}
+
 @media screen and (max-width: 1680px) {
 
 	#wrapper {
@@ -1619,12 +1631,12 @@ body.is-preload #header .content .inner {
 	}
 
 	#data-usage-bar {
-		width: 50%
+		width: 45%
 	}
 
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 520px) {
 
 	#header {
 		padding: 1.5rem 0;
@@ -1812,7 +1824,7 @@ body.is-preload #header .content .inner {
 	}
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 520px) {
 
 	#main article {
 		padding: 3rem 1.5rem 0.5rem 1.5rem;
@@ -1959,4 +1971,15 @@ progress::-moz-progress-bar {
 
 .crypto_address {
   word-wrap: break-word;
+}
+
+@media screen and (max-width: 520px) {
+	#vpn-field{
+		width: 100%;
+		padding: 0;
+	}
+
+	#contact-field{
+		margin-top: 1.5rem;
+	}
 }

@@ -93,19 +93,19 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 								value="Logout" /></li>
 					</ul>
 					<div class="fields" id="vpn-fields">
-						<div class="field">
+						<div class="field" id="vpn-field">
 							<div id="server-list-label-case">
 								<label for="server-list" id="server-list-label">Server</label>
 								<p></p>
 								<input type="button" id="Reload-server-list-button" value="Reload" class="primary" />
 							</div>
 							<select id="server-list-option" name="server-list">
-								<option value="">wait to load server list</option>
+								<option value="">Loading server list</option>
 							</select>
 							<input type="button" id="access-url" name="server-list">
 							<div id="panel_1">
 								<input type="button" id="access-url-copy-button" name="server-list" value="copy" />
-								<progress id="data-usage-bar" value="100" max="100"></progress>
+								<input type="button" id="data-usage-bar" value="USAGE" class="primary" />
 								<input type="button" id="access-url-go-to-app-button" value="go app" />
 							</div>
 						</div>
@@ -127,7 +127,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 								value="Logout" /></li>
 					</ul>
 					<div class="fields">
-						<div class="field">
+						<div class="field" id="contact-field">
 							<label for="message">Message</label>
 							<textarea name="message" id="message" rows="4"></textarea>
 						</div>
