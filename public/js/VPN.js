@@ -105,8 +105,7 @@ function get_access_url(server_id, uid) {
             document.getElementById("access-url").style.display = "initial";
             document.getElementById("access-url-copy-button").style.display = "initial";
             document.getElementById("data-usage-bar").style.display = "initial";
-            document.getElementById("data-usage-bar").value = data.data_used_percentage;
-            document.getElementById("data-usage-bar").innerHTML = data.data_used_percentage + "%";
+            document.getElementById("data-usage-bar").value = data.data_used_percentage + "%";
             var access_url = data.access_url + "#" + data.display_name
             console.log(access_url);
             var go_to_outlie_app_listener = document.getElementById("access-url-go-to-app-button");
