@@ -48,6 +48,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 					<li><a href="#intro">Intro</a></li>
 					<!--<li><a href="#sponser">Sponser</a></li>-->
 					<li><a href="#VPN">VPN</a></li>
+					<li><a href="#URL">URL</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -107,6 +108,44 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 								<input type="button" id="access-url-copy-button" name="server-list" value="copy" />
 								<input type="button" id="data-usage-bar" value="USAGE" class="primary" />
 								<input type="button" id="access-url-go-to-app-button" value="go app" />
+							</div>
+						</div>
+					</div>
+				</form>
+			</article>
+
+			<!-- URL -->
+			<article id="URL">
+				<h2 class="major">URL</h2>
+				<h3>⚠️in development⚠️</h3>
+				<h4><a href="#sponser">Sponser</a></h4>
+				<form method="post" action="#">
+					<ul class="actions">
+						<li class="avatar-case" display="none"><img class="avatar" /></li>
+						<li class="login-name-case" display="none"><input type="button" class="login-name" value="NAME"
+								readonly /></li>
+						<li class="login-button-case" display="none"><input type="button" class="login-button"
+								onclick="location.href='#login'" value="Login" /></li>
+						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
+								value="Logout" /></li>
+					</ul>
+					<div class="fields" id="url-fields">
+						<div class="field" id="url-field">
+							<div id="sl-url-label-case">
+								<label  id="url-mode-label">LONG URL / SHORT URL</label>
+								<p></p>
+							</div>
+							<select id="url-mode-option" name="url-mode-list">
+								<option value="none">Please choose the mode</option>
+								<option value="long">LONG URL</option>
+								<option value="short">SHORT URL</option>
+							</select>
+							<input type="text" id="url-input" name="url-input" placeholder="Type your URL here EX:https://jhihyulin.live" />
+							<input type="button" id="sl-url-submit-button" value="create" class="primary" />
+							<input type="text" id="sl-url">
+							<div id="panel_2">
+								<input type="button" id="sl-url-try-button" value="TRY it" />
+								<input type="button" id="sl-url-copy-button" value="copy" />
 							</div>
 						</div>
 					</div>
@@ -211,6 +250,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 	<script src="js/util.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/VPN.js"></script>
+	<script src="js/slurl.js"></script>
 	<script src="js/contact.js"></script>
 	<script src="js/console_info.js"></script>
 

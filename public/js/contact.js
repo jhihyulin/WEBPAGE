@@ -119,6 +119,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById("access-url-copy-button").style.display = "none";
     document.getElementById("access-url-go-to-app-button").style.display = "none";
     document.getElementById("vpn-fields").style.display = "initial";
+    document.getElementById("url-fields").style.display = "initial";
     document.getElementById("data-usage-bar").style.display = "none";
     var db = firebase.firestore();
     var ref = db.collection("user").doc(uid);
@@ -156,6 +157,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.querySelectorAll(".logout-button-case").forEach(a => a.style.display = "none");
     document.querySelectorAll(".avatar-case").forEach(a => a.style.display = "none");
     document.getElementById("vpn-fields").style.display = "none";
+    document.getElementById("url-fields").style.display = "none";
   }
   try {
     if (user.emailVerified == true && user.email != null) {
@@ -173,6 +175,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     console.log(error);
   }
   get_server_list(user.uid)
+  sl_url_init(user.uid)
   /*
   try {
     var db = firebase.firestore();
