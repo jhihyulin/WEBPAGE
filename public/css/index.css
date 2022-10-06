@@ -1793,6 +1793,12 @@ body.is-preload #header .content .inner {
 	border-radius: 50%;
 }
 
+.captcha-button-case {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	text-align: left;
+}
+
 @media screen and (max-width: 736px) {
 
 	#main article {
@@ -1838,7 +1844,16 @@ body.is-preload #header .content .inner {
 		margin-left: 0;
 	}
 
+	
+	.captcha-button-case {
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		text-align: center;
+	}
+
 }
+
+
 
 /* Footer */
 
@@ -1966,7 +1981,7 @@ progress::-moz-progress-bar {
 }
 
 .crypto_address {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 @media screen and (max-width: 520px) {
@@ -1979,3 +1994,11 @@ progress::-moz-progress-bar {
 		margin-top: 1.5rem;
 	}
 }
+/*
+@media screen and (max-width: 370px){
+    .captcha-button-case {
+        transform:scale(0.77);
+        -webkit-transform:scale(0.77);
+    }
+}
+*/

@@ -46,6 +46,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 			<nav>
 				<ul>
 					<li><a href="#intro">Intro</a></li>
+					<li><a href="#captcha">Captcha</a></li>
 					<!--<li><a href="#sponser">Sponser</a></li>-->
 					<li><a href="#VPN">VPN</a></li>
 					<li><a href="#URL">URL</a></li>
@@ -61,7 +62,29 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 			<article id="intro">
 				<h2 class="major">Intro</h2>
 				<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-				<p>EMPTY</p>
+			</article>
+
+			<!-- Captcha -->
+			<article id="captcha">
+				<h2 class="major">Captcha</h2>
+
+				<div class="captcha-button-case" class="actions">
+					<h3>Cloudflare turnstile</h3>
+					<div class="cf-turnstile" data-sitekey="0x4AAAAAAAAwINkUcfk4zeKj"></div>
+					<h3>hCapcha</h3>
+					<div class="h-captcha" data-sitekey="2c0be061-f99c-43ed-a605-017f2924fff3" data-theme="dark"></div>
+					<h3>reCAPTCHA</h3>
+					<div id="g-g-recaptcha"></div>
+					<script type="text/javascript">
+						var onloadCallback = function () {
+							grecaptcha.render('g-g-recaptcha', {
+								'sitekey': '6LdmjVsiAAAAABGS6_O-QHTK27IwN6IzzQfqdHA7',
+								'theme': 'dark'
+							});
+						};
+					</script>
+				</div>
+
 			</article>
 
 			<!-- Sponser -->
@@ -69,12 +92,12 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 				<h2 class="major">Sponser</h2>
 				<h4><a rel="payment"
 						href="bitcoin:bc1qdetkppmf9rc387czt99c678yhvvlf7kztms6nh?&message=For jhihyulin.live VPN">Bitcoin</a>
-						<p id="bitcoin_address" class="crypto_address">bc1qdetkppmf9rc387czt99c678yhvvlf7kztms6nh</p>
+					<p id="bitcoin_address" class="crypto_address">bc1qdetkppmf9rc387czt99c678yhvvlf7kztms6nh</p>
 				</h4>
 				<h4>
 					<a rel="payment"
 						href="ethereum:0x9698400E2E50F97F39010AD512619fB7700E434A?&message=For jhihyulin.live VPN">Ethereum</a>
-						<p id="ethereum_address" class="crypto_address">0x9698400E2E50F97F39010AD512619fB7700E434A</p>
+					<p id="ethereum_address" class="crypto_address">0x9698400E2E50F97F39010AD512619fB7700E434A</p>
 				</h4>
 			</article>
 
@@ -132,7 +155,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 					<div class="fields" id="url-fields">
 						<div class="field" id="url-field">
 							<div id="sl-url-label-case">
-								<label  id="url-mode-label">LONG URL / SHORT URL</label>
+								<label id="url-mode-label">LONG URL / SHORT URL</label>
 								<p></p>
 							</div>
 							<select id="url-mode-option" name="url-mode-list">
@@ -140,7 +163,8 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 								<option value="long">LONG URL</option>
 								<option value="short">SHORT URL</option>
 							</select>
-							<input type="text" id="url-input" name="url-input" placeholder="Type your URL here EX:https://jhihyulin.live" />
+							<input type="text" id="url-input" name="url-input"
+								placeholder="Type your URL here EX:https://jhihyulin.live" />
 							<input type="button" id="sl-url-submit-button" value="create" class="primary" />
 							<input type="text" id="sl-url">
 							<div id="panel_2">
@@ -244,6 +268,13 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 	<!--loading-bar-->
 	<link src="/lib/loading-bar.min.css" rel="stylesheet" />
 	<script src="/lib/loading.min.js"></script>
+	<!--turnstile-->
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async
+		defer></script>
+	<!--hcaptcha-->
+	<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+	<!--recaptcha-->
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 	<!-- Scripts -->
 	<script src="js/browser.min.js"></script>
 	<script src="js/breakpoints.min.js"></script>
