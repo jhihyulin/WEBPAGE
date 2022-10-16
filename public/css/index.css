@@ -2002,3 +2002,18 @@ progress::-moz-progress-bar {
     }
 }
 */
+
+/*
+【辰宇落雁體】── 複寫呢喃，為你成篇
+https://github.com/Chenyu-otf/chenyuluoyan_thin
+*/
+/*
+@font-face {
+	font-family:CYLY-Thin-Monospaced;
+	src: url('font/ChenYuluoyan-Thin-Monospaced.ttf') format('truetype');
+}
+
+body {
+	font-family: CYLY-Thin-Monospaced;
+}
+*/
