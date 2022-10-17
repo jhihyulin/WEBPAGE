@@ -11,6 +11,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 
 @import url(fontawesome-all.min.css);
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+TC&display=swap');
 
 html,
 body,
@@ -242,8 +243,8 @@ input,
 select,
 textarea {
 	color: #ffffff;
-	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 300;
+	font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+	font-weight: 400;
 	font-size: 1rem;
 	line-height: 1.65;
 }
@@ -284,10 +285,12 @@ h4,
 h5,
 h6 {
 	color: #ffffff;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 1.5;
 	margin: 0 0 1rem 0;
+	/*
 	text-transform: uppercase;
+	*/
 	letter-spacing: 0.2rem;
 }
 
@@ -1482,7 +1485,9 @@ body.is-preload #bg:before {
 }
 
 #header .content p {
+  /*
 	text-transform: uppercase;
+	*/
 	letter-spacing: 0.2rem;
 	font-size: 0.8rem;
 	line-height: 2;
@@ -2000,5 +2005,20 @@ progress::-moz-progress-bar {
         transform:scale(0.77);
         -webkit-transform:scale(0.77);
     }
+}
+*/
+
+/*
+【辰宇落雁體】── 複寫呢喃，為你成篇
+https://github.com/Chenyu-otf/chenyuluoyan_thin
+*/
+
+@font-face {
+	font-family:CYLY-Thin-Monospaced;
+	src: url('font/ChenYuluoyan-Thin-Monospaced.ttf') format('truetype');
+}
+/*
+body {
+	font-family: CYLY-Thin-Monospaced;
 }
 */
