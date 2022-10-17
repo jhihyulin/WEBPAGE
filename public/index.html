@@ -39,19 +39,19 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 			</div>
 			<div class="content">
 				<div class="inner">
-					<h1>JHIH YU LIN</h1>
-					<p>Taiwan, NewTaipeiCity</p>
+					<h1 style="font-family: CYLY-Thin-Monospaced">JHIH YU LIN</h1>
+					<p>臺灣，新北市</p>
 				</div>
 			</div>
 			<nav>
 				<ul>
-					<li><a href="#intro">Intro</a></li>
-					<li><a href="#captcha">Captcha</a></li>
+					<li><a href="#intro">關於</a></li>
+					<li><a href="#captcha">CAPTCHA</a></li>
 					<!--<li><a href="#sponser">Sponser</a></li>-->
 					<li><a href="#VPN">VPN</a></li>
-					<li><a href="#URL">URL</a></li>
-					<li><a href="#sponser">Sponser</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a href="#URL">URL TOOL</a></li>
+					<li><a href="#sponser">贊助</a></li>
+					<li><a href="#contact">聯絡</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -61,18 +61,18 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 
 			<!-- Intro -->
 			<article id="intro">
-				<h2 class="major">Intro</h2>
+				<h2 class="major">關於</h2>
 				<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 			</article>
 
 			<!-- Captcha -->
 			<article id="captcha">
-				<h2 class="major">Captcha</h2>
+				<h2 class="major">CAPTCHA</h2>
 
 				<div class="captcha-button-case" class="actions">
-					<h3>Cloudflare turnstile</h3>
+					<h3>Cloudflare Turnstile</h3>
 					<div class="cf-turnstile" data-sitekey="0x4AAAAAAAAwINkUcfk4zeKj"></div>
-					<h3>hCapcha</h3>
+					<h3>hCaptcha</h3>
 					<div class="h-captcha" data-sitekey="2c0be061-f99c-43ed-a605-017f2924fff3" data-theme="dark"></div>
 					<h3>reCAPTCHA</h3>
 					<div id="g-g-recaptcha"></div>
@@ -84,7 +84,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 							});
 						};
 					</script>
-					<h3>friendly captcha</h3>
+					<h3>Friendly Captcha</h3>
 					<div class="frc-captcha dark" data-start="auto" data-sitekey="FCMMIAEAG8LDKTMO"></div>
 				</div>
 
@@ -92,7 +92,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 
 			<!-- Sponser -->
 			<article id="sponser">
-				<h2 class="major">Sponser</h2>
+				<h2 class="major">贊助</h2>
 				<h3>BTC</h3>
 				<h4>
 				  <a rel="payment" href="https://link.trustwallet.com/send?asset=c0&address=bc1qdetkppmf9rc387czt99c678yhvvlf7kztms6nh&memo=Sponsor%20jhihyulin.live&data=Sponsor%20jhihyulin.live">Trust Wallet</a>
@@ -101,7 +101,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 				<blockquote id="BTC_address" class="crypto_address">
 				  bc1qdetkppmf9rc387czt99c678yhvvlf7kztms6nh
 			  </blockquote>
-				<h3>Ethereum</h3>
+				<h3>ETH</h3>
 				<h4>
 				  <a rel="payment" href="https://link.trustwallet.com/send?asset=c60&address=0x9698400E2E50F97F39010AD512619fB7700E434A&memo=Sponsor%20jhihyulin.live&data=Sponsor%20jhihyulin.live">Trust Wallet</a>
 				  <a rel="payment" href="https://metamask.app.link/send/0x9698400E2E50F97F39010AD512619fB7700E434A">Metamask</a>
@@ -159,33 +159,33 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 			<!-- VPN -->
 			<article id="VPN">
 				<h2 class="major">VPN</h2>
-				<h3>⚠️in development⚠️</h3>
-				<h4><a href="#sponser">Sponser</a></h4>
+				<h3>⚠️開發中⚠️</h3>
+				<h4><a href="#sponser">贊助</a></h4>
 				<form method="post" action="#">
 					<ul class="actions">
 						<li class="avatar-case" display="none"><img class="avatar" /></li>
 						<li class="login-name-case" display="none"><input type="button" class="login-name" value="NAME"
 								readonly /></li>
 						<li class="login-button-case" display="none"><input type="button" class="login-button"
-								onclick="location.href='#login'" value="Login" /></li>
+								onclick="location.href='#login'" value="登入" /></li>
 						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
-								value="Logout" /></li>
+								value="登出" /></li>
 					</ul>
 					<div class="fields" id="vpn-fields">
 						<div class="field" id="vpn-field">
 							<div id="server-list-label-case">
-								<label for="server-list" id="server-list-label">Server</label>
+								<label for="server-list" id="server-list-label">伺服器</label>
 								<p></p>
-								<input type="button" id="Reload-server-list-button" value="Reload" class="primary" />
+								<input type="button" id="Reload-server-list-button" value="重新載入" class="primary" />
 							</div>
 							<select id="server-list-option" name="server-list">
-								<option value="">Loading server list</option>
+								<option value="">正在載入伺服器列表</option>
 							</select>
 							<input type="button" id="access-url" name="server-list">
 							<div id="panel_1">
-								<input type="button" id="access-url-copy-button" name="server-list" value="copy" />
+								<input type="button" id="access-url-copy-button" name="server-list" value="複製" />
 								<input type="button" id="data-usage-bar" value="USAGE" class="primary" />
-								<input type="button" id="access-url-go-to-app-button" value="go app" />
+								<input type="button" id="access-url-go-to-app-button" value="前往APP" />
 							</div>
 						</div>
 					</div>
@@ -195,36 +195,36 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 			<!-- URL -->
 			<article id="URL">
 				<h2 class="major">URL</h2>
-				<h3>⚠️in development⚠️</h3>
-				<h4><a href="#sponser">Sponser</a></h4>
+				<h3>⚠️開發中⚠️</h3>
+				<h4><a href="#sponser">贊助</a></h4>
 				<form method="post" action="#">
 					<ul class="actions">
 						<li class="avatar-case" display="none"><img class="avatar" /></li>
 						<li class="login-name-case" display="none"><input type="button" class="login-name" value="NAME"
 								readonly /></li>
 						<li class="login-button-case" display="none"><input type="button" class="login-button"
-								onclick="location.href='#login'" value="Login" /></li>
+								onclick="location.href='#login'" value="登入" /></li>
 						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
-								value="Logout" /></li>
+								value="登出" /></li>
 					</ul>
 					<div class="fields" id="url-fields">
 						<div class="field" id="url-field">
 							<div id="sl-url-label-case">
-								<label id="url-mode-label">LONG URL / SHORT URL</label>
+								<label id="url-mode-label">長網址 / 短網址</label>
 								<p></p>
 							</div>
 							<select id="url-mode-option" name="url-mode-list">
-								<option value="none">Please choose the mode</option>
-								<option value="long">LONG URL</option>
-								<option value="short">SHORT URL</option>
+								<option value="none">請選擇模式</option>
+								<option value="long">長網址</option>
+								<option value="short">短網址</option>
 							</select>
 							<input type="text" id="url-input" name="url-input"
-								placeholder="Type your URL here EX:https://jhihyulin.live" />
-							<input type="button" id="sl-url-submit-button" value="create" class="primary" />
+								placeholder="在此輸入URL e.g., https://jhihyulin.live" />
+							<input type="button" id="sl-url-submit-button" value="創建" class="primary" />
 							<input type="text" id="sl-url">
 							<div id="panel_2">
-								<input type="button" id="sl-url-try-button" value="TRY it" />
-								<input type="button" id="sl-url-copy-button" value="copy" />
+								<input type="button" id="sl-url-try-button" value="試試" />
+								<input type="button" id="sl-url-copy-button" value="複製" />
 							</div>
 						</div>
 					</div>
@@ -233,26 +233,26 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 
 			<!-- Contact -->
 			<article id="contact">
-				<h2 class="major">Contact</h2>
+				<h2 class="major">聯絡</h2>
 				<form method="post" action="#">
 					<ul class="actions">
 						<li class="avatar-case" display="none"><img class="avatar" /></li>
 						<li class="login-name-case" display="none"><input type="button" class="login-name" value="NAME"
 								readonly /></li>
 						<li class="login-button-case" display="none"><input type="button" class="login-button"
-								onclick="location.href='#login'" value="Login" /></li>
+								onclick="location.href='#login'" value="登入" /></li>
 						<li class="logout-button-case" display="none"><input type="button" class="logout-button"
-								value="Logout" /></li>
+								value="登出" /></li>
 					</ul>
 					<div class="fields">
 						<div class="field" id="contact-field">
-							<label for="message">Message</label>
+							<label for="message">訊息</label>
 							<textarea name="message" id="message" rows="4"></textarea>
 						</div>
 					</div>
 					<ul class="actions">
-						<li><input type="button" id="send-message-button" value="Send Message" class="primary" /></li>
-						<li><input type="reset" value="Reset" /></li>
+						<li><input type="button" id="send-message-button" value="傳送" class="primary" /></li>
+						<li><input type="reset" value="清除" /></li>
 					</ul>
 				</form>
 				<ul class="icons">
@@ -278,7 +278,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 
 			<!-- login -->
 			<article id="login">
-				<h2 class="major">Login</h2>
+				<h2 class="major">登入</h2>
 				<div id="firebase-ui-case">
 					<div id="firebaseui-auth-container"></div>
 				</div>
