@@ -85,7 +85,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 						};
 					</script>
 					<h3>Friendly Captcha</h3>
-					<div class="frc-captcha dark" data-start="auto" data-sitekey="FCMMIAEAG8LDKTMO"></div>
+					<div class="frc-captcha dark" data-start="auto" data-sitekey="FCMMIAEAG8LDKTMO"><!-- data-lang="zh_tw"--></div>
 				</div>
 
 			</article>
@@ -299,7 +299,7 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 	<!-- BG -->
 	<div id="bg"></div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
 	<!--script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script-->
@@ -310,14 +310,14 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 		rel="stylesheet">
 	<!--end-->
 	<!--firebase/firebaseui-web-->
-	<script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth__zh_tw.js"></script>
-	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+	<script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth__zh_tw.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css" />
 	<!--end-->
 	<!--firebase-->
-	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-performance.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-performance.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 	<script src="js/firebase.js"></script>
 	<!--end-->
 	<!--turnstile-->
@@ -328,7 +328,8 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 	<!--recaptcha-->
 	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 	<!--friendly captcha-->
-	<script src="https://unpkg.com/friendly-challenge@0.9.7/widget.min.js" async defer></script>
+	<!--Language fixes should be released in version 1.0.0, stable version is 0.9.8, and the language is en, line 88 need to be updated after the release of the repaired version-->
+	<script src="https://unpkg.com/friendly-challenge@0.9.8/widget.min.js" async defer></script>
 	<!-- Scripts -->
 	<script src="js/browser.min.js"></script>
 	<script src="js/breakpoints.min.js"></script>
