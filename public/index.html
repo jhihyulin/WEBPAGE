@@ -251,12 +251,14 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 	<div id="bg"></div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<!--toaster-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+	<!--end-->
 	<!--script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script-->
 	<!--firebase/firebaseui-web-->
 	<script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth__zh_tw.js"></script>
-	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css" />
+	<link rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css" media="print" onload="this.media='all'"/>
 	<!--end-->
 	<!--firebase-->
 	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -266,18 +268,18 @@ Attribution 3.0 Taiwan (CC BY 3.0 TW) (https://creativecommons.org/licenses/by/3
 	<script src="js/firebase.js"></script>
 	<!--end-->
 	<!--turnstile-->
-	<script type="module" async src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async
+	<script async src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async
 		defer></script>
 	<!--hcaptcha-->
-	<script type="module" async src="https://js.hcaptcha.com/1/api.js" async defer></script>
+	<script async src="https://js.hcaptcha.com/1/api.js" async defer></script>
 	<!--recaptcha-->
-	<script type="module" async src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+	<script async src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 	<!--friendly captcha-->
 	<!--Language fixes should be released in version 1.0.0, stable version is 0.9.8, and the language is en, line 88 need to be updated after the release of the repaired version-->
-	<script type="module" async src="https://unpkg.com/friendly-challenge@0.9.8/widget.min.js" async defer></script>
+	<script async src="https://unpkg.com/friendly-challenge@0.9.8/widget.min.js" async defer></script>
 
 	<!--like.co-->
-	<script type="module" async src="https://noobtw.github.io/likeco-btn/likeco-btn.js"></script>
+	<script async src="https://noobtw.github.io/likeco-btn/likeco-btn.js"></script>
 	<!-- Scripts -->
 	<script src="js/browser.min.js"></script>
 	<script src="js/breakpoints.min.js"></script>
