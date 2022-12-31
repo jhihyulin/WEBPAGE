@@ -3,11 +3,7 @@
 
 name: Preview to Firebase Hosting
 on:
-  workflow_dispatch: ~
   pull_request: ~
-  push:
-    branches:
-      - preview
 jobs:
   preview:
     runs-on: ubuntu-latest
