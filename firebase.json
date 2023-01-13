@@ -7,14 +7,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
+    "rewrites": [
       {
         "source": "/",
-        "destination": "/index",
-        "type": 301
+        "destination": "/index"
       }
     ],
-    "rewrites": [],
+    "redirects": [],
     "cleanUrls": true
   }
 }
