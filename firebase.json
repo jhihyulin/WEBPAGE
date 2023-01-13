@@ -14,6 +14,8 @@
         "type": 308
       }
     ],
-    "rewrites": []
+    "rewrites": [],
+    "cleanUrls": true,
+    "trailingSlash": false
   }
 }
