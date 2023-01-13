@@ -15,7 +15,6 @@
       }
     ],
     "rewrites": [],
-    "cleanUrls": true,
-    "trailingSlash": false
+    "cleanUrls": true
   }
 }
