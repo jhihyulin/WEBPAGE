@@ -10,7 +10,7 @@
     "redirects": [
       {
         "source": "/",
-        "destination": "/index.html",
+        "destination": "/index",
         "type": 308
       }
     ],
