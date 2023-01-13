@@ -7,11 +7,15 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [],
     "rewrites": [
       {
         "source": "/",
-        "destination": "/index.html"
+        "destination": "/index",
+        "type": 301
       }
-    ]
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
   }
 }
